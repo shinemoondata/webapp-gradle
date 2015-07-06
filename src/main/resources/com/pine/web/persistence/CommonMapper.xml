@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pine.web.persistence.CommonMapper">
+
+ 	<cache type="org.mybatis.caches.ehcache.EhcacheCache" >
+	    <property name="timeToIdleSeconds" value="3600"/>
+	    <property name="timeToLiveSeconds" value="3600"/>
+	    <property name="maxEntriesLocalHeap" value="1000"/>
+	    <property name="maxEntriesLocalDisk" value="10000000"/>
+	    <property name="memoryStoreEvictionPolicy" value="LRU"/>
+	</cache>
+	 
+	<!-- 아이템 목록 조회  -->
+	<select id="selectItemList" parameterType="CommonVO" resultType="CommonVO" useCache="false">
+	SELECT
+		itemid, productid, listprice, unitcost, supplier, status, attr1 as attr1
+	FROM item
+	WHERE 1=1
+		<if test="itemid != '' and itemid != null">
+	    AND itemid = #{itemid}
+	  	</if>
+	ORDER BY CONVERT(substr(itemid,4+1 ), SQL_INTEGER ) ASC
+	</select>
+
+
+	<!-- 아이템 저장  -->
+	<insert id="insertItem" parameterType="CommonVO" >
+	INSERT INTO  item (
+		itemid, productid, listprice, unitcost, supplier, status, attr1
+	)VALUES(
+		#{itemid},'K9-RT-02',156.29, 96.00,1,'P','Adult Female'
+	)
+	</insert>
+	 
+	
+</mapper>

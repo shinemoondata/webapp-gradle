@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+/*=================================================================================
+ * Default Tag Style Definition
+ =================================================================================*/
+* {
+	border-collapse: collapse;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: "돋움", Dotum, "굴림", Gulim, Tahoma, Verdana, AppleGothic, sans-serif;
+	font-size: 75%;
+	color: #666666;
+	line-height: 18px;
+	border-collapse: collapse;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+}
+
+ol, ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+div, li, dl, dt, dd, form, iframe, p, a, span, blockquote {
+	margin: 0px;
+	padding: 0px;
+}
+
+fieldset {
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;		/* : BUG : Opera 7 에서 border: none 버그 있음 */
+}
+
+legend, hr {
+	display: none;
+}
+
+label {
+	vertical-align: middle;
+}
+
+img {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	vertical-align: top;
+}
+
+table, th, td {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+	border-collapse: collapse;
+}
+
+input, textarea {
+	margin: 0px;
+	padding: 0px;
+	font-family: "돋움", Dotum, "굴림", Gulim, Tahoma, Verdana, AppleGothic, sans-serif;
+	font-size: 1em;
+	color: #555555;
+	border: 1px solid #CCD2DA;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+}
+
+input {
+	padding-top: 2px;
+	height: 14px;
+}
+
+textarea {
+	padding: 4px 4px 4px 4px;
+}
+
+input.image, input.radio, input.checkbox {		/* : FILTER : IE 6 에서 속성 선택자 지원 안함 */
+	padding: 0px;
+	height: auto;
+	border: none;
+	background: none;
+}
+input[type="radio"], input[type="checkbox"] {
+	width: 20px;
+	border: none;
+}
+input[type="image"] {
+	border: none;
+}
+
+input.file {		/* : FILTER : IE 6 에서 속성 선택자 지원 안함 */
+	padding: 2px 0px 2px 0px;
+	height: auto;
+	/*background: #F1F1F1;*/
+}
+.on input[type="text"]:focus,
+.on input[type="password"]:focus,
+.on textarea:focus {
+	background-color: #FFFFCE;
+}
+
+.on {
+	background-color: #FFFFCE;
+}
+
+.off {
+	border: 1px solid #CCD2DA;
+	background-color: #FFFFFF;
+}
+
+select {
+	margin: 0px;
+	padding: 0px;
+	height: 18px;
+	font-family: "돋움", Dotum, "굴림", Gulim, Tahoma, Verdana, AppleGothic, sans-serif;
+	color: #555555;
+	vertical-align: middle;
+	font-size: 1em;
+}
+
+a:link, a:visited {
+	font-size: 1em;
+	color: #656565;
+	text-decoration: none;
+}
+a:hover, a:active {
+	font-size: 1em;
+	color: #f28a36;
+	text-decoration: underline;
+}
+
+
+
+/*=================================================================================
+ * 텍스트버튼 정의
+ =================================================================================*/
+
+.txt-btn, .txt-btn a {display:inline-block;font-size:11px;letter-spacing:-1px;height:18px;color:#5d5d5d;text-decoration:none;font-weight:bold;}
+.txt-btn {padding:0 0 0 2px;}
+.txt-btn a {height:16px;padding:2px 8px 0 6px;line-height:18px;}
+:root .txt-btn a {line-height:16px;}
+
+.txt-btn.gray {background:url(/images/bg/btn_gray_left.gif) no-repeat left top;}
+.txt-btn.gray a {background:url(/images/bg/btn_gray_right.gif) no-repeat right top;}
+.txt-btn.gray a:hover {color:#f28a36;}
+
+.txt-btn.blue {background:url(/images/bg/btn_blue_left.gif) no-repeat left top;}
+.txt-btn.blue a {background:url(/images/bg/btn_blue_right.gif) no-repeat right top;color:#fff;}
+.txt-btn.blue a:hover {color:#f28a36;}
+
+.txt-btn.orange {background:url(/images/bg/btn_orange_left.gif) no-repeat left top;}
+.txt-btn.orange a {background:url(/images/bg/btn_orange_right.gif) no-repeat right top;color:#fff;}
+.txt-btn.orange a:hover {color:#f28a36;}
+
+.txt-btn.red {background:url(/images/bg/btn_red_left.gif) no-repeat left top;}
+.txt-btn.red a {background:url(/images/bg/btn_red_right.gif) no-repeat right top;color:#fff;}
+.txt-btn.red a:hover {color:#f28a36;}
+
+.txt-btn.darkBlue {background:url(/images/bg/btn_darkBlue_left.gif) no-repeat left top;}
+.txt-btn.darkBlue a {background:url(/images/bg/btn_darkBlue_right.gif) no-repeat right top;color:#fff;}
+.txt-btn.darkBlue a:hover {color:#f28a36;}
+
+
+.txt-btn25, .txt-btn25 a {display:inline-block;font-size:14px;letter-spacing:-1px;height:25px;color:#5d5d5d;text-decoration:none;font-weight:bold;}
+.txt-btn25 {padding:0 0 0 2px;}
+.txt-btn25 a {height:23px;padding:2px 8px 0 6px;line-height:25px;}
+:root .txt-btn25 a {line-height:23px;}
+
+.txt-btn25.red {background:url(/images/bg/btn_red_left.gif) no-repeat left top;}
+.txt-btn25.red a {background:url(/images/bg/btn_red_right.gif) no-repeat right top;color:#fff;}
+.txt-btn25.red a:hover {color:#f28a36;}
