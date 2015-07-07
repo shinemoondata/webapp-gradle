@@ -27,7 +27,7 @@ function fn_init(){
 	 
     $("#jqGridTable").jqGrid({  
         //ajax 호출할 페이지
-        url:'/common/jqgrid.pms?m=search',
+        url:'/common/jqgrid.json?m=search',
         //로딩중일때 출력시킬 로딩내용
         loadtext : '로딩중..',
         //응답값

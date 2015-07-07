@@ -98,7 +98,7 @@ function fn_search(data)
 	if(data == undefined){
 		
 		var param = "m=search";
-		var url = "/common/handlebars.pms";
+		var url = "/common/handlebars.json";
 		CallAjax(url, param, fn_search);	
 	}else{
 		
@@ -136,7 +136,7 @@ function _getValue(obj, nRow, nCol){
 function fn_save()
 { 
 	var param = "m=insert&itemid=EST-6000";
-	var url = "/common/insertJson.pms";
+	var url = "/common/insertJson.json";
 	CallAjax(url, param, _save);
 }
 function _save(data){

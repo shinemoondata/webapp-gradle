@@ -9,24 +9,50 @@
 
 
  
-    <!-- ################### SPRING JSON RESOLVER ################### -->
-    <bean id="jsonResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
-        <property name="order" value="1"/>
-    </bean>
-    <bean name="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-        <property name="contentType" value="application/json;charset=UTF-8" />
-    </bean>
-    
+    <!-- ################### SPRING RESOLVER ################### -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1"/>
+		<property name="contentNegotiationManager">
+			<bean class="org.springframework.web.accept.ContentNegotiationManager">
+				<constructor-arg>
+					<bean class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
+						<constructor-arg>
+							<map>
+								<entry key="json" value="application/json" />
+								<entry key="xml" value="application/xml" />
+							</map>
+						</constructor-arg>
+					</bean>
+				</constructor-arg>
+			</bean>
+		</property>
 
-
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-  		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-  		<property name="prefix" value="/WEB-INF/jsps/"/>
-  		<property name="suffix" value=".jsp"/>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+					<property name="marshaller" ref="jaxb2Marshaller"></property>
+				</bean>
+			</list>
+		</property>
 	</bean>
-	
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2" />
+		<property name="prefix" value="/WEB-INF/jsps/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="packagesToScan">
+			<list>
+				<value>com.pine.web.domain</value>
+			</list>
+		</property>
+	</bean>
+
 	<context:component-scan base-package="com.pine.web" />
 
- 
-    
+
 </beans>

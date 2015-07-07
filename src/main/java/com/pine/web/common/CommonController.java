@@ -40,8 +40,8 @@ public class CommonController {
 		ModelAndView view = new ModelAndView();
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
-			view.addObject("rows",(List)svc.selectItemList(vo));
-			view.setViewName("jsonView"); //ajax 일때 이용함
+			view.addObject("rows", (List) svc.selectItemList(vo));
+			//view.setViewName("jsonView"); //ajax 일때 이용함
 		}
 		return view;
 	}
@@ -57,8 +57,7 @@ public class CommonController {
 		ModelAndView view = new ModelAndView();
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
-			view.addObject("rows",(List)svc.selectItemList(vo));
-			view.setViewName("jsonView"); //ajax 일때 이용함
+			view.addObject("rows", (List) svc.selectItemList(vo));
 		}
 		return view;
 	}
@@ -83,10 +82,9 @@ public class CommonController {
 			/** Total number of records */
 			m.put("records", 399);
 			/** The actual data */
-			m.put("rows", (List)svc.selectItemList(vo));
+			m.put("rows", (List) svc.selectItemList(vo));
 
 			view.addAllObjects(m);
-			view.setViewName("jsonView"); //ajax 일때 이용함
 
 		}
 		return view;
@@ -112,10 +110,9 @@ public class CommonController {
 			/** Total number of records */
 			m.put("records", 399);
 			/** The actual data */
-			m.put("rows", (List)svc.selectItemList(vo));
+			m.put("rows", (List) svc.selectItemList(vo));
 
 			view.addAllObjects(m);
-			view.setViewName("jsonView"); //ajax 일때 이용함
 
 		}
 		return view;
@@ -130,14 +127,12 @@ public class CommonController {
      */
 	@RequestMapping("/common/insertJson")
 	public ModelAndView insertJson(@ModelAttribute CommonVO vo)  {
+		ModelAndView view = new ModelAndView();
 		Map m = new HashMap();
-
 		String result = svc.insertItems(vo);
-
-
 		m.put("result",result);
-
-		return new ModelAndView("jsonView",m);
+		view.addObject("result",result);
+		return view;
 	}
 
 	/**
