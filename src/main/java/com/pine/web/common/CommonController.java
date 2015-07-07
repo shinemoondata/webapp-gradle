@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -138,9 +137,7 @@ public class CommonController {
 	@RequestMapping("/common/insertJson")
 	public ModelAndView insertJson(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
-		Map m = new HashMap();
 		String result = svc.insertItems(vo);
-		m.put("result",result);
 		view.addObject("result",result);
 		return view;
 	}
