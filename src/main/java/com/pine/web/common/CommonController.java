@@ -56,7 +56,6 @@ public class CommonController {
 		ModelAndView view = new ModelAndView();
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
-
 			view.addObject("rows", (List) svc.selectItemList(vo));
 		}
 		return view;

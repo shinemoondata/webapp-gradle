@@ -13,6 +13,12 @@ public class CommonVO implements Serializable {
 
 	private static final long serialVersionUID = 8751282105532159742L;
 
+	public CommonVO(String d, String o, String des, String op) {
+		this.itemid = d;
+		this.productid = o;
+		this.status = des;
+		this.attr1 = op;
+	}
 
 	public CommonVO(){
 
