@@ -32,10 +32,18 @@ public class CommonService {
 	 * @param to the to
 	 * @return the list
      */
-	public List<Map> selectItemList(CommonVO to)  {
+	public List<CommonVO> selectItemList(CommonVO to)  {
 		return mapper.selectItemList(to);
 	}
-
+	/**
+	 * Select item list.
+	 *
+	 * @param to the to
+	 * @return the list
+	 */
+	public CommonVO selectItem(CommonVO to)  {
+		return mapper.selectItem(to);
+	}
 
 	/**
 	 * Insert items.

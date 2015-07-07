@@ -10,9 +10,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pine.web.domain.CommonVO;
@@ -52,15 +51,26 @@ public class CommonController {
 	 * @param vo the vo
 	 * @return the model and view
      */
+
 	@RequestMapping("/common/handlebars")
 	public ModelAndView handlebars(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
+
 			view.addObject("rows", (List) svc.selectItemList(vo));
 		}
 		return view;
 	}
+
+	@RequestMapping("/common/xmlObj")
+	public ModelAndView xmlObj(@ModelAttribute CommonVO vo)  {
+		ModelAndView view = new ModelAndView();
+		vo.setItemid("EST-1");
+		view.addObject("rows", svc.selectItem(vo));
+		return view;
+	}
+
 
 	/**
 	 * Jqgrid model and view.

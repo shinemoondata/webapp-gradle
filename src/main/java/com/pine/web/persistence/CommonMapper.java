@@ -21,6 +21,15 @@ public interface CommonMapper {
 	List selectItemList(CommonVO to);
 
 	/**
+	 * Select item .
+	 *
+	 * @param to the to
+	 * @return the list
+	 */
+	CommonVO selectItem(CommonVO to);
+
+
+	/**
 	 * Insert item.
 	 *
 	 * @param to the to
