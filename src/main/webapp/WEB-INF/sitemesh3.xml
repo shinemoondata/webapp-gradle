@@ -1,0 +1,17 @@
+<sitemesh>
+	<!-- Exclude path from decoration. -->
+	<mapping path="/*.action" exclue="true"/>
+	<mapping path="/*.jsp" exclue="true"/>
+	<mapping path="/*.html" exclue="true"/>
+	<mapping path="/*.htm" exclue="true"/>
+	<mapping path="/*.jsp" exclue="true"/>
+	<mapping path="/download/*" exclue="true"/>
+	<mapping path="/error.jsp" exclue="true"/>
+
+
+	<mapping path="/*.pms" decorator="/WEB-INF/jsps/template/main.jsp"/>
+
+	<mapping path="/common/*.pms" decorator="/WEB-INF/jsps/template/popup.jsp"/>
+
+
+</sitemesh>

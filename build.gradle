@@ -47,7 +47,9 @@ dependencies {
 
     providedCompile "javax.servlet:javax.servlet-api:${version.servlet}"
     compile "javax.servlet:jstl:${version.jstl}"
-    compile "opensymphony:sitemesh:2.4.2"
+
+//    compile "opensymphony:sitemesh:2.4.2"
+    compile "org.sitemesh:sitemesh:3.0.1"
 
 
     compile "org.hsqldb:hsqldb:${version.hsqldb}"

@@ -6,7 +6,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <head>
 <title>아이템 목록</title>
-<meta name="decorator" content="popup" />
+
 <style>
 #tableHeadView th{ background-color:#efefef;}
 </style>

@@ -1,19 +1,14 @@
 package com.pine.web.common;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
-
+import com.pine.web.domain.CommonVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pine.web.domain.CommonVO;
+import java.util.*;
 
 
 /**
@@ -39,7 +34,6 @@ public class CommonController {
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
 			view.addObject("rows", (List) svc.selectItemList(vo));
-			//view.setViewName("jsonView"); //ajax 일때 이용함
 		}
 		return view;
 	}
