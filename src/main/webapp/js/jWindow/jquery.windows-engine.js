@@ -108,7 +108,11 @@ jQuery.extend({
             $obj.css("width", (width+10) + "px").css("height", height + "px");
             if (options.type === "iframe") {
                 var dw = 3, dh = 2;
-                if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+                try{
+                    if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+                }catch(e){
+                    dw = dh = 0;
+                }
                 $obj.find("iframe").css("width", (width-dw) + "px").css("height", (height-dh) + "px");
                 
                 $obj.find("iframe").each(function(){
@@ -281,7 +285,11 @@ jQuery.extend({
             
             ////for iframe browser compatibility
             var dw = 3, dh = 2;
-            if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+            try{
+                if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+            }catch(e){
+                dw = dh = 0;
+            }
             //////////////////////////////////////////////////////////
             
             if ($obj.data("state") === "minimized") {

@@ -7,6 +7,9 @@
 	<mapping path="/*.jsp" exclue="true"/>
 	<mapping path="/download/*" exclue="true"/>
 	<mapping path="/error.jsp" exclue="true"/>
+	<mapping path="/js/*" exclude="true"/>
+	<mapping path="/css/*" exclude="true"/>
+	<mapping path="/images/*" exclude="true"/>
 
 
 	<mapping path="/*.pms" decorator="/WEB-INF/jsps/template/main.jsp"/>

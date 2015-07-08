@@ -44,18 +44,11 @@ function _cbGo(data)
 </script>
 </head>
 
-<div class="markdown-body">
+<div >
 	메뉴 테스트(레이어팝업)
-	<ul>
-		<li>
-			<span class="txt-btn blue" id="handlebars"><a href="#" >handlebars</a></span>
-		</li>
-		<li>
-			<span class="txt-btn blue" id="jqgrid"><a href="#">jqgrid</a></span>
-		</li>
-		<li>
-			<span class="txt-btn blue" id="popup_member"><a href="#">경로체크</a></span>
-		</li>
-	</ul>
+<br/>
+<button type="button" class="btn btn-primary btn-xs" id="handlebars">Handlebars</button>
+<button type="button" class="btn btn-info btn-xs" id="jqgrid">jqgrid</button>
+<button class="btn btn-default btn-xs" type="submit" id="popup_member">경로체크</button>
 </div>
 
