@@ -23,7 +23,7 @@
 	<![endif]-->
 
 	<script type="text/javascript" src="/js/jquery-1.11.2.min.js" charset="utf-8"></script>
-
+	<script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
 
 	<script type="text/javascript" src="/js/jquery.blockUI.js"  charset="utf-8"></script>
 	<script type="text/javascript" src="/js/jWindow/jquery.windows-engine.js" charset="utf-8"></script>

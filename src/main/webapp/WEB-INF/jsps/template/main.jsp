@@ -21,6 +21,8 @@
 	<script type="text/javascript" src="/html5css3/respond.min.js"></script>
 	<![endif]-->
 	<script type="text/javascript" src="/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
+
 	<script type="text/javascript" src="/js/handlebars-v3.0.0.js" ></script>
 	<script type="text/javascript" src="/js/jquery.blockUI.js"  charset="utf-8"></script>
 	<script type="text/javascript" src="/js/jWindow/jquery.windows-engine.js" charset="utf-8"></script>
