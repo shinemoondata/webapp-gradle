@@ -25,7 +25,7 @@ function fn_go(type)
 			
 	}else if(type == 2){
 		var _cbfunc= "?rtn=_cbGo";
-		url = '/common/jqgrid.pms'+_cbfunc;
+		url = '/common/popup_jqgrid.pms'+_cbfunc;
 		jWindowPopup(url, '630', '550', 'yes','jqgrid');
 	}else if(type == 3){
 		var _cbfunc= "?rtn=_cbGo";

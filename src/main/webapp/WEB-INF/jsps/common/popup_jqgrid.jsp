@@ -6,8 +6,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <head>
 <title>아이템 목록</title>
-<meta name="decorator" content="popup" />
-
 <link rel="stylesheet" type="text/css" href="/js/themes/smoothness/jquery-ui.min.css"/>
 <link rel="stylesheet" type="text/css" href="/js/jqgrid/css/ui.jqgrid.css"/>
 <script type="text/javascript" src="/js/jquery-ui.min.js" ></script>
@@ -27,7 +25,7 @@ function fn_init(){
 	 
     $("#jqGridTable").jqGrid({  
         //ajax 호출할 페이지
-        url:'/common/jqgrid.json?m=search',
+        url:'/common/popup_jqgrid.json?m=search',
         //로딩중일때 출력시킬 로딩내용
         loadtext : '로딩중..',
         //응답값
@@ -90,7 +88,7 @@ function fn_search()
 	$("#jqGridTable").clearGridData();  // 이전 데이터 삭제
 	
     var param="";
-	$("#jqGridTable").setGridParam({	url:"/common/jqgrid.pms?m=search"+param, datatype:"json" }).trigger("reloadGrid");
+	$("#jqGridTable").setGridParam({	url:"/common/popup_jqgrid.json?m=search"+param, datatype:"json" }).trigger("reloadGrid");
 }
 
 

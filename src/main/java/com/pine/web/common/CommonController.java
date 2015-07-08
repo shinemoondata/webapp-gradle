@@ -70,7 +70,7 @@ public class CommonController {
 	 * @param vo the vo
 	 * @return the model and view
      */
-	@RequestMapping("/common/jqgrid")
+	@RequestMapping("/common/popup_jqgrid")
 	public ModelAndView jqgrid(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
 

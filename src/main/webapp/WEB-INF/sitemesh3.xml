@@ -11,7 +11,11 @@
 
 	<mapping path="/*.pms" decorator="/WEB-INF/jsps/template/main.jsp"/>
 
+
+
 	<mapping path="/common/*.pms" decorator="/WEB-INF/jsps/template/popup.jsp"/>
+
+	<mapping path="/common/popup_*.pms" decorator="/WEB-INF/jsps/template/popup.jsp"/>
 
 
 </sitemesh>

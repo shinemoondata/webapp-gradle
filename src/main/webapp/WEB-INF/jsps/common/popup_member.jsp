@@ -6,8 +6,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <head>
 <title>아이템 목록</title>
-<meta name="decorator" content="popup" />
-
 <link rel="stylesheet" type="text/css" href="/js/themes/redmond/jquery-ui.min.css"/>
 <link rel="stylesheet" type="text/css" href="/js/jqgrid/css/ui.jqgrid.css"/>
 <script type="text/javascript" src="/js/jquery-ui.min.js" ></script>
@@ -27,32 +25,31 @@ function fn_init(){
 	 
     $("#jqGridTable").jqGrid({  
         //ajax 호출할 페이지
-        url:'/index.pms?m=search',
+        url:'/index.json?m=search',
         //로딩중일때 출력시킬 로딩내용
         loadtext : '로딩중..',
         //응답값
-        datatype: "json",
-        height : 400,
-        rowNum: 20,
-        gridview:true,
-   		rownumbers:true,
-   		rowList:[20,50,100],
-   		viewrecords: true,
-   	    sortorder: "desc",
-   	    loadonce: true,
-   		pager: "#jqGridPage",
-   		scroll:1,
+	    datatype: "json",
+	    height : 400,
+	    rowNum: 20,
+	    gridview:true,
+	    rownumbers:false,
+	    viewrecords: true,
+	    sortorder: "desc",
+	    loadonce: true,
+	    pager: "#jqGridNav",
+	    scroll:1,
         colNames:['상품아이디','제품아이디', '가격', '상태','속성'],
         colModel:[
-            {name:'ITEMID',align:"center", width:100},
-            {name:'PRODUCTID',align:"center", width:120},
-            {name:'LISTPRICE',align:"right", width:120},
-            {name:'STATUS',align:"center", width:60},
-            {name:'ATTR1',align:"center", width:150}     
+            {name:'itemid',align:"center", width:100},
+            {name:'productid',align:"center", width:120},
+            {name:'listprice',align:"right", width:120},
+            {name:'status',align:"center", width:60},
+            {name:'attr1',align:"center", width:150}
         ],
         caption:"상품목록"
     });
-    jQuery("#jqGridTable").jqGrid('navGrid','#jqGridPage',{edit:false,add:false,del:false,search:false,refresh:false});
+	jQuery("#jqGridTable").jqGrid('navGrid','#jqGridNav',{edit:false,add:false,del:false,search:false,refresh:false});
     
 	
 }
@@ -92,7 +89,8 @@ function fn_search()
 	$("#jqGridTable").clearGridData();  // 이전 데이터 삭제
 	
     var param="";
-	$("#jqGridTable").setGridParam({	url:"/index.pms?m=search"+param, datatype:"json" }).trigger("reloadGrid");
+	$("#jqGridTable").setGridParam({	url:"/index.json?m=search"+param, datatype:"json" }).trigger("reloadGrid");
+
 }
 
 
