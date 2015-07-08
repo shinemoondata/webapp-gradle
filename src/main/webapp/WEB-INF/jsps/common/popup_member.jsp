@@ -64,8 +64,8 @@ function fn_home(){
 <div style="float:right;padding-right:10px">
 
 	<button type="button" class="btn btn-info btn-xs" id="searchList">조회</button>
-	<button class="btn btn-default btn-xs" type="button" id="clear">초기화</button>
-	<button class="btn btn-default btn-xs" type="button" id="home">닫기</button>
+	<button type="button" class="btn btn-default btn-xs" id="clear">초기화</button>
+	<button type="button" class="btn btn-default btn-xs" id="home">닫기</button>
 
 
 </div>

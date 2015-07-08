@@ -49,6 +49,6 @@ function _cbGo(data)
 <br/>
 <button type="button" class="btn btn-primary btn-xs" id="handlebars">Handlebars</button>
 <button type="button" class="btn btn-info btn-xs" id="jqgrid">jqgrid</button>
-<button class="btn btn-default btn-xs" type="submit" id="popup_member">경로체크</button>
+<button type="button" class="btn btn-default btn-xs" id="popup_member">경로체크</button>
 </div>
 
