@@ -10,6 +10,7 @@ repositories {
     mavenCentral()
 }
 
+
 def version = [
         spring: "4.1.7.RELEASE"
         , mybatis: "3.3.0"
@@ -28,9 +29,16 @@ ext {
     javaVersion   = "1.8"
 }
 
+task test_path << {
+    // Using a relative path
+    String  project_path = file(file(file("/").parent).parent).parent
+   println project_path
+}
+
 
 dependencies {
-    compile fileTree(dir: 'c:/mine/ext_lib', include: '*.jar')
+    String project_path = file(file(file("/").parent).parent).parent
+    compile fileTree(dir: project_path+'/ext_lib', include: '*.jar')
 
     compile "org.springframework:spring-core:${version.spring}"
     compile "org.springframework:spring-aop:${version.spring}"
