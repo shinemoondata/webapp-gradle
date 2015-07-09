@@ -1,9 +1,16 @@
 package com.pine.web.common;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -123,4 +130,60 @@ public class CommonService {
 		}
 		return isSuccess;
 	}
+
+	public void download(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		// Set the content type based to zip
+		response.setContentType("Content-type: text/zip");
+		response.setHeader("Content-Disposition", "attachment; filename=mytest.zip");
+
+		// List of files to be downloaded
+		List files = new ArrayList();
+		files.add(new File("d:/temp/IBSheet1.chm"));
+		files.add(new File("d:/temp/IBSheet2.chm"));
+		files.add(new File("d:/temp/IBSheet3.chm"));
+
+		ServletOutputStream out = response.getOutputStream();
+		ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(out));
+
+		for (int i=0;i<files.size(); i++)
+		{
+			File file =(File)files.get(i);
+			System.out.println("Adding file " + file.getName());
+			zos.putNextEntry(new ZipEntry(file.getName()));
+
+			// Get the file
+			FileInputStream fis = null;
+			try {
+				fis = new FileInputStream(file);
+
+			} catch (FileNotFoundException fnfe) {
+				// If the file does not exists, write an error entry instead of
+				// file
+				// contents
+				zos.write(("ERROR: Could not find file " + file.getName())
+						.getBytes());
+				zos.closeEntry();
+				System.out.println("Could not find file "
+						+ file.getAbsolutePath());
+				continue;
+			}
+
+			BufferedInputStream fif = new BufferedInputStream(fis);
+
+			// Write the contents of the file
+			int data = 0;
+			while ((data = fif.read()) != -1) {
+				zos.write(data);
+			}
+			fif.close();
+
+			zos.closeEntry();
+			System.out.println("Finished adding file " + file.getName());
+		}
+
+		zos.close();
+	}
+
+
 }

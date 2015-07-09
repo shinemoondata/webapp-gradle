@@ -15,6 +15,7 @@ $(window).load(function() {
 	$('#jqgrid').click(function() 		{	fn_go(2);	 return false;});
 	$('#popup_member').click(function() 		{	fn_go(3);	 return false;});
 	$('#fileupload').click(function() 		{	fn_go(4);	 return false;});
+	$('#multidownload').click(function() 		{	fn_go(5);	 return false;});
 
 });
 function fn_go(type)
@@ -35,6 +36,9 @@ function fn_go(type)
 	}else if(type == 4){
 		url = 'fileUpload.pms';
 		location.href = url;
+	}else if(type == 5){
+		url = 'fileDownload.pms';
+		window.open(url);
 	}
 }
  
@@ -48,10 +52,11 @@ function _cbGo(data)
 
 <div >
 	메뉴 테스트(레이어팝업)
-<br/>
-<button type="button" class="btn btn-primary btn-xs" id="handlebars">Handlebars</button>
-<button type="button" class="btn btn-info btn-xs" id="jqgrid">jqgrid</button>
-<button type="button" class="btn btn-default btn-xs" id="popup_member">경로체크</button>
-<button type="button" class="btn btn-default btn-xs" id="fileupload">파일업로드(드래그앤드롭)</button>
+	<br/>
+	<button type="button" class="btn btn-primary btn-xs" id="handlebars">Handlebars</button>
+	<button type="button" class="btn btn-info btn-xs" id="jqgrid">jqgrid</button>
+	<button type="button" class="btn btn-default btn-xs" id="popup_member">경로체크</button>
+	<button type="button" class="btn btn-default btn-xs" id="fileupload">파일업로드(드래그앤드롭)</button>
+	<button type="button" class="btn btn-default btn-xs" id="multidownload">파일다운로드(다중파일.zip)</button>
 </div>
 

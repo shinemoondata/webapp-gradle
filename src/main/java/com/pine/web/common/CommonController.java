@@ -70,6 +70,20 @@ public class CommonController implements HandlerExceptionResolver
 	}
 
 	/**
+	 * Index model and view.
+	 *
+	 * @return the model and view
+	 */
+	@RequestMapping("/fileDownload")
+	public void fileDownload(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			svc.download( request, response);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
 	 * Handlebars model and view.
 	 *
 	 * @param vo the vo
