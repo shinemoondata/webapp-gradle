@@ -53,7 +53,8 @@ public class CommonController {
 	}
 
 	@RequestMapping("/fileUpload/post") //ajax에서 호출하는 부분
-	public String upload(MultipartHttpServletRequest multipartRequest) { //Multipart로 받는다.
+	public ModelAndView upload(MultipartHttpServletRequest multipartRequest) { //Multipart로 받는다.
+		ModelAndView view = new ModelAndView();
 		Iterator<String> itr = multipartRequest.getFileNames();
 
 		while (itr.hasNext()) { //받은 파일들을 모두 돌린다.
@@ -84,9 +85,9 @@ public class CommonController {
 			}// try end;
 			*/
 		}
+		view.addObject("result", "success");
 
-
-		return "success";
+		return view;
 	}
 
 

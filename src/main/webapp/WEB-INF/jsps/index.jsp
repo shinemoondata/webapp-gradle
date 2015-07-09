@@ -33,8 +33,7 @@ function fn_go(type)
 		url = '/common/popup_member.pms'+_cbfunc;
 		jWindowPopup(url, '630', '550', 'yes','jqgrid');
 	}else if(type == 4){
-		var _cbfunc= "?rtn=_cbGo";
-		url = 'fileUpload.pms'+_cbfunc;
+		url = 'fileUpload.pms';
 		location.href = url;
 	}
 }

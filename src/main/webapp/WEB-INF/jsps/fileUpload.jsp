@@ -196,8 +196,8 @@
           data: formData,
           success: function(data){
             status.setProgress(100);
-
-            //$("#status1").append("File upload Done<br>");
+            $("#status1").append("File upload Done<br>");
+            //alert(data.result);
           }
         });
 
@@ -210,5 +210,7 @@
 
 <body>
 <div id="fileUpload" class="dragAndDropDiv">Drag & Drop Files Here</div>
+
+<div id="status1" ></div>
 </body>
 </html>
