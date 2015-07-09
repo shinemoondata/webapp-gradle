@@ -19,7 +19,8 @@ import com.pine.web.domain.CommonVO;
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
 @Controller
-public class CommonController {
+public class CommonController
+{
 
 	@Autowired
 	private transient CommonService svc;
@@ -208,5 +209,6 @@ public class CommonController {
 	    jsonObject.put("result_list", jsonList);
 		return jsonObject;
 	}
+
 
 }

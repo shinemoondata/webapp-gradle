@@ -112,7 +112,8 @@
         {
           if(files[i].size > 62914560){
             alert("파일은 60메가 이상 업로드 할 수 없습니다.");
-          }else{
+          }else
+          {
             var fd = new FormData();
             fd.append('file', files[i]);
 
