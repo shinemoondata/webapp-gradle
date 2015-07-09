@@ -11,7 +11,7 @@ repositories {
 }
 
 def version = [
-        spring: "4.1.6.RELEASE"
+        spring: "4.1.7.RELEASE"
         , mybatis: "3.3.0"
         , mybatisSpring: "1.2.3"
         , mybatisCache: "1.0.0"
@@ -71,6 +71,8 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-core:2.3.0"
     compile "com.fasterxml.jackson.core:jackson-databind:2.3.0"
 
+    compile "commons-fileupload:commons-fileupload:1.2.1"
+    compile "commons-io:commons-io:2.4"
 
 
     testCompile "junit:junit:4.11"

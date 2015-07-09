@@ -1,14 +1,19 @@
 package com.pine.web.common;
 
-import com.pine.web.domain.CommonVO;
+import java.io.File;
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.*;
+import com.pine.web.domain.CommonVO;
 
 
 /**
@@ -27,16 +32,63 @@ public class CommonController {
 	 *
 	 * @param vo the vo
 	 * @return the model and view
-     */
+	 */
 	@RequestMapping("/index")
-	public ModelAndView index(@ModelAttribute CommonVO vo)  {
+	public ModelAndView index(@ModelAttribute CommonVO vo) {
 		ModelAndView view = new ModelAndView();
-		if("search".equals(vo.getM()))
-		{ // 파라미터 값에 따라 json으로 분기
+		if ("search".equals(vo.getM())) { // 파라미터 값에 따라 json으로 분기
 			view.addObject("rows", (List) svc.selectItemList(vo));
 		}
 		return view;
 	}
+
+	/**
+	 * Index model and view.
+	 *
+	 * @return the model and view
+	 */
+	@RequestMapping("/fileUpload")
+	public ModelAndView fileUpload(Model model) {
+		return new ModelAndView();
+	}
+
+	@RequestMapping("/fileUpload/post") //ajax에서 호출하는 부분
+	public String upload(MultipartHttpServletRequest multipartRequest) { //Multipart로 받는다.
+		Iterator<String> itr = multipartRequest.getFileNames();
+
+		while (itr.hasNext()) { //받은 파일들을 모두 돌린다.
+			MultipartFile mpf = multipartRequest.getFile(itr.next());
+			String originFileName = mpf.getOriginalFilename();
+			System.out.println("FILE_INFO: " + originFileName); //받은 파일 리스트 출력
+
+			Long l= System.nanoTime();
+			String postfix = "_" + String.valueOf(l);
+
+			try {
+				File f = new File("d:\\temp\\" + postfix);
+				mpf.transferTo(f);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+
+			/*
+			FileOutputStream fos=null;
+			try{
+				byte fileData[] = mpf.getBytes();
+				fos = new FileOutputStream("d:\\temp\\" + postfix);
+				fos.write(fileData);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				if(fos != null)try{fos.close(); }catch(Exception e){}
+			}// try end;
+			*/
+		}
+
+
+		return "success";
+	}
+
 
 	/**
 	 * Handlebars model and view.
