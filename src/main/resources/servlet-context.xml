@@ -45,10 +45,21 @@
 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- max upload size in bytes -->
-		<property name="maxUploadSize" value="62914560" /> <!-- 60MB -->
+		<property name="maxUploadSize" value="2147483648" /> <!-- 2GB -->
 		<!-- max size of file in memory (in bytes) -->
 		<property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
 	</bean>
+
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">
+					/error/err_fileupload
+				</prop>
+			</props>
+		</property>
+	</bean>
+
 
 	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 		<property name="packagesToScan">
@@ -57,6 +68,8 @@
 			</list>
 		</property>
 	</bean>
+
+
 
 	<context:component-scan base-package="com.pine.web" />
 

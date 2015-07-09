@@ -110,12 +110,17 @@
       {
         for (var i = 0; i < files.length; i++)
         {
-          var fd = new FormData();
-          fd.append('file', files[i]);
+          if(files[i].size > 62914560){
+            alert("파일은 60메가 이상 업로드 할 수 없습니다.");
+          }else{
+            var fd = new FormData();
+            fd.append('file', files[i]);
 
-          var status = new createStatusbar(obj); //Using this we can set progress.
-          status.setFileNameSize(files[i].name,files[i].size);
-          sendFileToServer(fd,status);
+            var status = new createStatusbar(obj); //Using this we can set progress.
+            status.setFileNameSize(files[i].name,files[i].size);
+            sendFileToServer(fd,status);
+
+          }
 
         }
       }
@@ -196,8 +201,11 @@
           data: formData,
           success: function(data){
             status.setProgress(100);
-            $("#status1").append("File upload Done<br>");
-            //alert(data.result);
+            //$("#status1").append("File upload Done<br>");
+            alert(data.result);
+          },
+          error: function( jqXHR, textStatus, errorThrown ) {
+            alert("err:"+ textStatus + ", " + errorThrown );
           }
         });
 

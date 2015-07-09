@@ -70,6 +70,11 @@
 	</servlet-mapping>
 
 
+
+ 
+<!-- 접근 권한없음 : UNAUTHORIZED
+
+
 	<security-constraint>
 		<display-name>JSP Protection</display-name>
 		<web-resource-collection>
@@ -80,7 +85,7 @@
 			<role-name>nobody</role-name>
 		</auth-constraint>
 	</security-constraint>
- 
+
 	<security-role>
 		<description>
 			Nobody should be in this role so JSP files are protected
@@ -88,8 +93,6 @@
 		</description>
 		<role-name>nobody</role-name>
 	</security-role>
- 
-<!-- 접근 권한없음 : UNAUTHORIZED
 <error-page>
   <error-code>401</error-code>
   <location>/error/unauthorized.html</location>

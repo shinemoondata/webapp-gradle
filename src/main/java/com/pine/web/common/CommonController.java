@@ -1,6 +1,5 @@
 package com.pine.web.common;
 
-import java.io.File;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -52,44 +50,18 @@ public class CommonController {
 		return new ModelAndView();
 	}
 
-	@RequestMapping("/fileUpload/post") //ajax에서 호출하는 부분
-	public ModelAndView upload(MultipartHttpServletRequest multipartRequest) { //Multipart로 받는다.
+	@RequestMapping("/fileUpload/post")
+	public ModelAndView upload(MultipartHttpServletRequest multi)
+	{
 		ModelAndView view = new ModelAndView();
-		Iterator<String> itr = multipartRequest.getFileNames();
+		try {
+			view.addObject("result",svc.upload(multi));
+		}catch(Exception e){
 
-		while (itr.hasNext()) { //받은 파일들을 모두 돌린다.
-			MultipartFile mpf = multipartRequest.getFile(itr.next());
-			String originFileName = mpf.getOriginalFilename();
-			System.out.println("FILE_INFO: " + originFileName); //받은 파일 리스트 출력
-
-			Long l= System.nanoTime();
-			String postfix = "_" + String.valueOf(l);
-
-			try {
-				File f = new File("d:\\temp\\" + postfix);
-				mpf.transferTo(f);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-
-			/*
-			FileOutputStream fos=null;
-			try{
-				byte fileData[] = mpf.getBytes();
-				fos = new FileOutputStream("d:\\temp\\" + postfix);
-				fos.write(fileData);
-			}catch(Exception e){
-				e.printStackTrace();
-			}finally{
-				if(fos != null)try{fos.close(); }catch(Exception e){}
-			}// try end;
-			*/
 		}
-		view.addObject("result", "success");
 
 		return view;
 	}
-
 
 	/**
 	 * Handlebars model and view.
