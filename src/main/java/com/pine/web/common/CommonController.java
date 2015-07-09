@@ -2,13 +2,18 @@ package com.pine.web.common;
 
 import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pine.web.domain.CommonVO;
@@ -19,7 +24,7 @@ import com.pine.web.domain.CommonVO;
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
 @Controller
-public class CommonController
+public class CommonController implements HandlerExceptionResolver
 {
 
 	@Autowired
@@ -58,7 +63,7 @@ public class CommonController
 		try {
 			view.addObject("result",svc.upload(multi));
 		}catch(Exception e){
-
+			System.out.println("익셉션 성공!!!!!");
 		}
 
 		return view;
@@ -210,5 +215,15 @@ public class CommonController
 		return jsonObject;
 	}
 
+
+
+	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,Exception e)
+	{
+		if (e instanceof MaxUploadSizeExceededException) {
+			System.out.println("익셉션 성공");
+			request.setAttribute("result", "Maximum upload file size is up to 60MB");
+		}
+		return new ModelAndView();
+	}
 
 }

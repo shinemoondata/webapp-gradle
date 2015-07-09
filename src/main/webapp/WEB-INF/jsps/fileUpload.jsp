@@ -110,7 +110,7 @@
       {
         for (var i = 0; i < files.length; i++)
         {
-          if(files[i].size > 62914560){
+          if(files[i].size > 60000000){
             alert("파일은 60메가 이상 업로드 할 수 없습니다.");
           }else
           {
@@ -206,7 +206,7 @@
             alert(data.result);
           },
           error: function( jqXHR, textStatus, errorThrown ) {
-            alert("err:"+ textStatus + ", " + errorThrown );
+            alert("err:"+jqXHR +", "+ textStatus + ", " + errorThrown );
           }
         });
 
