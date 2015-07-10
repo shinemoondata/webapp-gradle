@@ -9,9 +9,9 @@ import java.util.zip.ZipOutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
@@ -28,9 +28,11 @@ import com.pine.web.persistence.CommonMapper;
 /**
  * The type Common service.
  */
-@SuppressWarnings({ "unchecked", "rawtypes" })
+
 @Service
 public class CommonService {
+
+	private static final Logger logger = Logger.getLogger(CommonService.class);
 
 	@Autowired
 	private CommonMapper mapper;
@@ -42,7 +44,7 @@ public class CommonService {
 	 * @param to the to
 	 * @return the list
      */
-	public List<CommonVO> selectItemList(CommonVO to)  {
+	public List selectItemList(CommonVO to)  {
 		return mapper.selectItemList(to);
 	}
 	/**
@@ -131,14 +133,14 @@ public class CommonService {
 		return isSuccess;
 	}
 
-	public void download(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void download( HttpServletResponse response) throws ServletException, IOException
 	{
 		// Set the content type based to zip
 		response.setContentType("Content-type: text/zip");
 		response.setHeader("Content-Disposition", "attachment; filename=mytest.zip");
 
 		// List of files to be downloaded
-		List files = new ArrayList();
+		List<File> files = new ArrayList();
 		files.add(new File("d:/temp/IBSheet1.chm"));
 		files.add(new File("d:/temp/IBSheet2.chm"));
 		files.add(new File("d:/temp/IBSheet3.chm"));
@@ -146,40 +148,43 @@ public class CommonService {
 		ServletOutputStream out = response.getOutputStream();
 		ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(out));
 
-		for (int i=0;i<files.size(); i++)
+		for (File file:files)
 		{
-			File file =(File)files.get(i);
-			System.out.println("Adding file " + file.getName());
+			if(logger.isDebugEnabled()){
+				logger.debug("Adding file " + file.getName());
+			}
 			zos.putNextEntry(new ZipEntry(file.getName()));
 
 			// Get the file
-			FileInputStream fis = null;
+			FileInputStream fis;
 			try {
 				fis = new FileInputStream(file);
 
 			} catch (FileNotFoundException fnfe) {
-				// If the file does not exists, write an error entry instead of
-				// file
-				// contents
+				// If the file does not exists, write an error entry instead of file contents
 				zos.write(("ERROR: Could not find file " + file.getName())
 						.getBytes());
 				zos.closeEntry();
-				System.out.println("Could not find file "
-						+ file.getAbsolutePath());
+
+				if(logger.isDebugEnabled()){
+					logger.debug("Could not find file "+ file.getAbsolutePath());
+				}
 				continue;
 			}
 
 			BufferedInputStream fif = new BufferedInputStream(fis);
 
 			// Write the contents of the file
-			int data = 0;
+			int data;
 			while ((data = fif.read()) != -1) {
 				zos.write(data);
 			}
 			fif.close();
-
+			fis.close();
 			zos.closeEntry();
-			System.out.println("Finished adding file " + file.getName());
+			if(logger.isDebugEnabled()){
+				logger.debug("Finished adding file " + file.getName());
+			}
 		}
 
 		zos.close();
