@@ -172,7 +172,7 @@ public class ExcelView extends AbstractExcelView {
 					sheet.setColumnWidth(i, widths[i]);
 				} else {
 					sheet.autoSizeColumn(i);
-					sheet.setColumnWidth(i, (sheet.getColumnWidth(i)) + 1512);  // 윗줄만으로는 컬럼의 width 가 부족하여 더 늘려야 함.
+					sheet.setColumnWidth(i, (sheet.getColumnWidth(i)) + 2000);  // 윗줄만으로는 컬럼의 width 가 부족하여 더 늘려야 함.
 				}
 			}
 			rowNumber++;
@@ -200,7 +200,7 @@ public class ExcelView extends AbstractExcelView {
 							sheet.setColumnWidth(i, widths[i]);
 						} else {
 							sheet.autoSizeColumn(i);
-							sheet.setColumnWidth(i, (sheet.getColumnWidth(i)) + 1512);  // 윗줄만으로는 컬럼의 width 가 부족하여 더 늘려야 함.
+							sheet.setColumnWidth(i, (sheet.getColumnWidth(i)) + 2000);  // 윗줄만으로는 컬럼의 width 가 부족하여 더 늘려야 함.
 						}
 					}
 				}
