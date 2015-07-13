@@ -1,6 +1,10 @@
 package com.pine.web.common;
 
-import com.pine.web.domain.CommonVO;
+import java.util.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +17,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import com.pine.web.domain.CommonVO;
 
 
 /**
@@ -100,9 +102,9 @@ public class CommonController implements HandlerExceptionResolver
 	 */
 	@RequestMapping("/excelDownload")
 	public ModelAndView excelDownload(@ModelAttribute CommonVO vo) {
-		vo.setHeaderColumns("아이템아이디`제품아이디`가격`단위`제고`상태`속성");
+		/*vo.setHeaderColumns("아이템아이디`제품아이디`가격`단위`제고`상태`속성");
 		vo.setProperties("itemid`productid`listprice`unitcost`supplier`status`attr1");
-
+*/
 		vo.setHeaderArray(vo.getHeaderColumns().split("`"));
 		vo.setDataArray(vo.getProperties().split("`"));
 
