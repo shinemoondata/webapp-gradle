@@ -22,7 +22,7 @@ import org.springframework.web.servlet.view.document.AbstractExcelView;
 
 public class ExcelView extends AbstractExcelView {
 
-	/** 묵인일기격식배비 */
+	/** 디폴트 날짜 패턴 */
 	private static final String DEFAULT_DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
 
 	/** 문건명칭 */
