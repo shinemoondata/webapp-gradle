@@ -1,13 +1,5 @@
 package com.common;
 
-import java.net.URLEncoder;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;
@@ -19,7 +11,17 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.net.URLEncoder;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
 
+
+/**
+ * The type Excel view.
+ */
 public class ExcelView extends AbstractExcelView {
 
 	/** 디폴트 날짜 패턴 */
@@ -56,14 +58,16 @@ public class ExcelView extends AbstractExcelView {
 	}
 
 	/**
-	 * @param filename
-	 * @param sheetName
-	 * @param properties
-	 * @param titles
-	 * @param widths
-	 * @param converters
-	 * @param data
-	 * @param contents
+	 * Instantiates a new Excel view.
+	 *
+	 * @param filename the filename
+	 * @param sheetName the sheet name
+	 * @param properties the properties
+	 * @param titles the titles
+	 * @param widths the widths
+	 * @param converters the converters
+	 * @param data the data
+	 * @param contents the contents
 	 */
 	public ExcelView(String filename, String sheetName, String[] properties, String[] titles, Integer[] widths, Converter[] converters, Collection<?> data, String[] contents) {
 		this.filename = filename;
@@ -77,10 +81,12 @@ public class ExcelView extends AbstractExcelView {
 	}
 
 	/**
-	 * @param properties
-	 * @param titles
-	 * @param data
-	 * @param contents
+	 * Instantiates a new Excel view.
+	 *
+	 * @param properties the properties
+	 * @param titles the titles
+	 * @param data the data
+	 * @param contents the contents
 	 */
 	public ExcelView(String[] properties, String[] titles, Collection<?> data, String[] contents) {
 		this.properties = properties;
@@ -90,9 +96,11 @@ public class ExcelView extends AbstractExcelView {
 	}
 
 	/**
-	 * @param properties
-	 * @param titles
-	 * @param data
+	 * Instantiates a new Excel view.
+	 *
+	 * @param properties the properties
+	 * @param titles the titles
+	 * @param data the data
 	 */
 	public ExcelView(String[] properties, String[] titles, Collection<?> data) {
 		this.properties = properties;
@@ -101,8 +109,12 @@ public class ExcelView extends AbstractExcelView {
 	}
 
 	/**
-	 * @param properties
-	 * @param data
+	 * Instantiates a new Excel view.
+	 *
+	 * @param filename the filename
+	 * @param properties the properties
+	 * @param titles the titles
+	 * @param data the data
 	 */
 	public ExcelView(String filename, String[] properties, String[] titles, Collection<?> data) {
 		this.filename = filename;
@@ -113,8 +125,10 @@ public class ExcelView extends AbstractExcelView {
 
 
 	/**
-	 * @param properties
-	 * @param data
+	 * Instantiates a new Excel view.
+	 *
+	 * @param properties the properties
+	 * @param data the data
 	 */
 	public ExcelView(String[] properties, Collection<?> data) {
 		this.properties = properties;
@@ -229,66 +243,146 @@ public class ExcelView extends AbstractExcelView {
 		}
 	}
 
+	/**
+	 * Gets file name.
+	 *
+	 * @return the file name
+	 */
 	public String getFileName() {
 		return filename;
 	}
 
+	/**
+	 * Sets file name.
+	 *
+	 * @param filename the filename
+	 */
 	public void setFileName(String filename) {
 		this.filename = filename;
 	}
 
+	/**
+	 * Gets sheet name.
+	 *
+	 * @return the sheet name
+	 */
 	public String getSheetName() {
 		return sheetName;
 	}
 
+	/**
+	 * Sets sheet name.
+	 *
+	 * @param sheetName the sheet name
+	 */
 	public void setSheetName(String sheetName) {
 		this.sheetName = sheetName;
 	}
 
+	/**
+	 * Get properties.
+	 *
+	 * @return the string [ ]
+	 */
 	public String[] getProperties() {
 		return properties;
 	}
 
+	/**
+	 * Sets properties.
+	 *
+	 * @param properties the properties
+	 */
 	public void setProperties(String[] properties) {
 		this.properties = properties;
 	}
 
+	/**
+	 * Get titles.
+	 *
+	 * @return the string [ ]
+	 */
 	public String[] getTitles() {
 		return titles;
 	}
 
+	/**
+	 * Sets titles.
+	 *
+	 * @param titles the titles
+	 */
 	public void setTitles(String[] titles) {
 		this.titles = titles;
 	}
 
+	/**
+	 * Get widths.
+	 *
+	 * @return the integer [ ]
+	 */
 	public Integer[] getWidths() {
 		return widths;
 	}
 
+	/**
+	 * Sets widths.
+	 *
+	 * @param widths the widths
+	 */
 	public void setWidths(Integer[] widths) {
 		this.widths = widths;
 	}
 
+	/**
+	 * Get converters.
+	 *
+	 * @return the converter [ ]
+	 */
 	public Converter[] getConverters() {
 		return converters;
 	}
 
+	/**
+	 * Sets converters.
+	 *
+	 * @param converters the converters
+	 */
 	public void setConverters(Converter[] converters) {
 		this.converters = converters;
 	}
 
+	/**
+	 * Gets data.
+	 *
+	 * @return the data
+	 */
 	public Collection<?> getData() {
 		return data;
 	}
 
+	/**
+	 * Sets data.
+	 *
+	 * @param data the data
+	 */
 	public void setData(Collection<?> data) {
 		this.data = data;
 	}
 
+	/**
+	 * Get contents.
+	 *
+	 * @return the string [ ]
+	 */
 	public String[] getContents() {
 		return contents;
 	}
 
+	/**
+	 * Sets contents.
+	 *
+	 * @param contents the contents
+	 */
 	public void setContents(String[] contents) {
 		this.contents = contents;
 	}

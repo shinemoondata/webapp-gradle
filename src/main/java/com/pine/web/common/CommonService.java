@@ -1,18 +1,8 @@
 package com.pine.web.common;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
-
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-
+import com.common.ExcelView;
+import com.pine.web.domain.CommonVO;
+import com.pine.web.persistence.CommonMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -23,9 +13,17 @@ import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.common.ExcelView;
-import com.pine.web.domain.CommonVO;
-import com.pine.web.persistence.CommonMapper;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 
 /**
@@ -46,10 +44,11 @@ public class CommonService {
 	 *
 	 * @param to the to
 	 * @return the list
-     */
+	 */
 	public List selectItemList(CommonVO to)  {
 		return mapper.selectItemList(to);
 	}
+
 	/**
 	 * Select item list.
 	 *
@@ -65,7 +64,7 @@ public class CommonService {
 	 *
 	 * @param vo the vo
 	 * @return the string
-     */
+	 */
 	@Transactional
 	public String  insertItems(CommonVO vo) {
 		String rtn ="";
@@ -90,6 +89,13 @@ public class CommonService {
 		return rtn;
 	}
 
+	/**
+	 * Upload string.
+	 *
+	 * @param multi the multi
+	 * @return the string
+	 * @throws MultipartException the multipart exception
+	 */
 	public String upload(MultipartHttpServletRequest multi) throws MultipartException
 	{
 		String isSuccess = "";
@@ -136,6 +142,13 @@ public class CommonService {
 		return isSuccess;
 	}
 
+	/**
+	 * Download void.
+	 *
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException the iO exception
+	 */
 	public void download( HttpServletResponse response) throws ServletException, IOException
 	{
 		// Set the content type based to zip
@@ -194,6 +207,12 @@ public class CommonService {
 	}
 
 
+	/**
+	 * Build excel view.
+	 *
+	 * @param to the to
+	 * @return the excel view
+	 */
 	public ExcelView buildExcelView(CommonVO to) {
 
 		String[] userHeaderColumns = { "아이템아이디", "제품아이디", "가격", "단위","제고","상태","속성"  };

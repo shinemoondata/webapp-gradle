@@ -1,10 +1,6 @@
 package com.pine.web.common;
 
-import java.util.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.pine.web.domain.CommonVO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +13,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pine.web.domain.CommonVO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
 
 
 /**
@@ -51,6 +49,7 @@ public class CommonController implements HandlerExceptionResolver
 	/**
 	 * Index model and view.
 	 *
+	 * @param model the model
 	 * @return the model and view
 	 */
 	@RequestMapping("/fileUpload")
@@ -58,6 +57,12 @@ public class CommonController implements HandlerExceptionResolver
 		return new ModelAndView();
 	}
 
+	/**
+	 * Upload model and view.
+	 *
+	 * @param multi the multi
+	 * @return the model and view
+	 */
 	@RequestMapping("/fileUpload/post")
 	public ModelAndView upload(MultipartHttpServletRequest multi)
 	{
@@ -71,6 +76,12 @@ public class CommonController implements HandlerExceptionResolver
 		return view;
 	}
 
+	/**
+	 * File download.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 */
 	@RequestMapping("/fileDownload")
 	public void fileDownload(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -81,11 +92,16 @@ public class CommonController implements HandlerExceptionResolver
 	}
 
 
+	/**
+	 * Excel download.
+	 *
+	 * @param vo the vo
+	 * @return the model and view
+	 */
 	@RequestMapping("/excelDownload")
 	public ModelAndView excelDownload(@ModelAttribute CommonVO vo) {
 		return new ModelAndView(svc.buildExcelView(vo));
 	}
-
 
 
 	/**
@@ -93,7 +109,7 @@ public class CommonController implements HandlerExceptionResolver
 	 *
 	 * @param vo the vo
 	 * @return the model and view
-     */
+	 */
 
 	@RequestMapping("/common/handlebars")
 	public ModelAndView handlebars(@ModelAttribute CommonVO vo)  {
@@ -105,6 +121,12 @@ public class CommonController implements HandlerExceptionResolver
 		return view;
 	}
 
+	/**
+	 * Xml obj.
+	 *
+	 * @param vo the vo
+	 * @return the model and view
+	 */
 	@RequestMapping("/common/xmlObj")
 	public ModelAndView xmlObj(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
@@ -119,7 +141,7 @@ public class CommonController implements HandlerExceptionResolver
 	 *
 	 * @param vo the vo
 	 * @return the model and view
-     */
+	 */
 	@RequestMapping("/common/popup_jqgrid")
 	public ModelAndView jqgrid(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
@@ -148,7 +170,7 @@ public class CommonController implements HandlerExceptionResolver
 	 *
 	 * @param vo the vo
 	 * @return the model and view
-     */
+	 */
 	@RequestMapping("/common/popup_member")
 	public ModelAndView popup_member(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
@@ -176,7 +198,7 @@ public class CommonController implements HandlerExceptionResolver
 	 *
 	 * @param vo the vo
 	 * @return the model and view
-     */
+	 */
 	@RequestMapping("/common/insertJson")
 	public ModelAndView insertJson(@ModelAttribute CommonVO vo)  {
 		ModelAndView view = new ModelAndView();
@@ -190,7 +212,7 @@ public class CommonController implements HandlerExceptionResolver
 	 *
 	 * @param vo the vo
 	 * @return the list
-     */
+	 */
 	@RequestMapping("/common/jsonObj")
 	public @ResponseBody List jsonObj(@ModelAttribute CommonVO vo)  {
 	    return (List)svc.selectItemList(vo);
@@ -201,7 +223,7 @@ public class CommonController implements HandlerExceptionResolver
 	 * Json map.
 	 *
 	 * @return the map
-     */
+	 */
 	@RequestMapping("/common/jsonMap")
 	public @ResponseBody  Map jsonMap()  {
 		Map jsonObject = new HashMap();

@@ -13,6 +13,14 @@ public class CommonVO implements Serializable {
 
 	private static final long serialVersionUID = 8751282105532159742L;
 
+	/**
+	 * Instantiates a new Common vO.
+	 *
+	 * @param d the d
+	 * @param o the o
+	 * @param des the des
+	 * @param op the op
+	 */
 	public CommonVO(String d, String o, String des, String op) {
 		this.itemid = d;
 		this.productid = o;
@@ -20,6 +28,9 @@ public class CommonVO implements Serializable {
 		this.attr1 = op;
 	}
 
+	/**
+	 * Instantiates a new Common vO.
+	 */
 	public CommonVO(){
 
 	}
@@ -50,7 +61,7 @@ public class CommonVO implements Serializable {
 	 * Gets userid.
 	 *
 	 * @return the userid
-     */
+	 */
 	public String getUserid() {
 		return userid;
 	}
@@ -59,7 +70,7 @@ public class CommonVO implements Serializable {
 	 * Sets userid.
 	 *
 	 * @param userid the userid
-     */
+	 */
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
@@ -68,7 +79,7 @@ public class CommonVO implements Serializable {
 	 * Gets email.
 	 *
 	 * @return the email
-     */
+	 */
 	public String getEmail() {
 		return email;
 	}
@@ -77,7 +88,7 @@ public class CommonVO implements Serializable {
 	 * Sets email.
 	 *
 	 * @param email the email
-     */
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -86,7 +97,7 @@ public class CommonVO implements Serializable {
 	 * Gets firstname.
 	 *
 	 * @return the firstname
-     */
+	 */
 	public String getFirstname() {
 		return firstname;
 	}
@@ -95,7 +106,7 @@ public class CommonVO implements Serializable {
 	 * Sets firstname.
 	 *
 	 * @param firstname the firstname
-     */
+	 */
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
@@ -104,7 +115,7 @@ public class CommonVO implements Serializable {
 	 * Gets lastname.
 	 *
 	 * @return the lastname
-     */
+	 */
 	public String getLastname() {
 		return lastname;
 	}
@@ -113,7 +124,7 @@ public class CommonVO implements Serializable {
 	 * Sets lastname.
 	 *
 	 * @param lastname the lastname
-     */
+	 */
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
@@ -122,7 +133,7 @@ public class CommonVO implements Serializable {
 	 * Gets status.
 	 *
 	 * @return the status
-     */
+	 */
 	public String getStatus() {
 		return status;
 	}
@@ -131,7 +142,7 @@ public class CommonVO implements Serializable {
 	 * Sets status.
 	 *
 	 * @param status the status
-     */
+	 */
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -140,7 +151,7 @@ public class CommonVO implements Serializable {
 	 * Gets addr 1.
 	 *
 	 * @return the addr 1
-     */
+	 */
 	public String getAddr1() {
 		return addr1;
 	}
@@ -149,7 +160,7 @@ public class CommonVO implements Serializable {
 	 * Sets addr 1.
 	 *
 	 * @param addr1 the addr 1
-     */
+	 */
 	public void setAddr1(String addr1) {
 		this.addr1 = addr1;
 	}
@@ -158,7 +169,7 @@ public class CommonVO implements Serializable {
 	 * Gets addr 2.
 	 *
 	 * @return the addr 2
-     */
+	 */
 	public String getAddr2() {
 		return addr2;
 	}
@@ -167,7 +178,7 @@ public class CommonVO implements Serializable {
 	 * Sets addr 2.
 	 *
 	 * @param addr2 the addr 2
-     */
+	 */
 	public void setAddr2(String addr2) {
 		this.addr2 = addr2;
 	}
@@ -176,7 +187,7 @@ public class CommonVO implements Serializable {
 	 * Gets city.
 	 *
 	 * @return the city
-     */
+	 */
 	public String getCity() {
 		return city;
 	}
@@ -185,7 +196,7 @@ public class CommonVO implements Serializable {
 	 * Sets city.
 	 *
 	 * @param city the city
-     */
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
@@ -194,7 +205,7 @@ public class CommonVO implements Serializable {
 	 * Gets state.
 	 *
 	 * @return the state
-     */
+	 */
 	public String getState() {
 		return state;
 	}
@@ -203,7 +214,7 @@ public class CommonVO implements Serializable {
 	 * Sets state.
 	 *
 	 * @param state the state
-     */
+	 */
 	public void setState(String state) {
 		this.state = state;
 	}
@@ -212,7 +223,7 @@ public class CommonVO implements Serializable {
 	 * Gets zip.
 	 *
 	 * @return the zip
-     */
+	 */
 	public String getZip() {
 		return zip;
 	}
@@ -221,7 +232,7 @@ public class CommonVO implements Serializable {
 	 * Sets zip.
 	 *
 	 * @param zip the zip
-     */
+	 */
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
@@ -230,7 +241,7 @@ public class CommonVO implements Serializable {
 	 * Gets country.
 	 *
 	 * @return the country
-     */
+	 */
 	public String getCountry() {
 		return country;
 	}
@@ -239,7 +250,7 @@ public class CommonVO implements Serializable {
 	 * Sets country.
 	 *
 	 * @param country the country
-     */
+	 */
 	public void setCountry(String country) {
 		this.country = country;
 	}
@@ -248,7 +259,7 @@ public class CommonVO implements Serializable {
 	 * Gets phone.
 	 *
 	 * @return the phone
-     */
+	 */
 	public String getPhone() {
 		return phone;
 	}
@@ -257,7 +268,7 @@ public class CommonVO implements Serializable {
 	 * Sets phone.
 	 *
 	 * @param phone the phone
-     */
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -266,7 +277,7 @@ public class CommonVO implements Serializable {
 	 * Gets itemid.
 	 *
 	 * @return the itemid
-     */
+	 */
 	public String getItemid() {
 		return itemid;
 	}
@@ -275,7 +286,7 @@ public class CommonVO implements Serializable {
 	 * Sets itemid.
 	 *
 	 * @param itemid the itemid
-     */
+	 */
 	public void setItemid(String itemid) {
 		this.itemid = itemid;
 	}
@@ -284,7 +295,7 @@ public class CommonVO implements Serializable {
 	 * Gets productid.
 	 *
 	 * @return the productid
-     */
+	 */
 	public String getProductid() {
 		return productid;
 	}
@@ -293,7 +304,7 @@ public class CommonVO implements Serializable {
 	 * Sets productid.
 	 *
 	 * @param productid the productid
-     */
+	 */
 	public void setProductid(String productid) {
 		this.productid = productid;
 	}
@@ -302,7 +313,7 @@ public class CommonVO implements Serializable {
 	 * Gets listprice.
 	 *
 	 * @return the listprice
-     */
+	 */
 	public BigDecimal getListprice() {
 		return listprice;
 	}
@@ -311,7 +322,7 @@ public class CommonVO implements Serializable {
 	 * Sets listprice.
 	 *
 	 * @param listprice the listprice
-     */
+	 */
 	public void setListprice(BigDecimal listprice) {
 		this.listprice = listprice;
 	}
@@ -320,7 +331,7 @@ public class CommonVO implements Serializable {
 	 * Gets unitcost.
 	 *
 	 * @return the unitcost
-     */
+	 */
 	public BigDecimal getUnitcost() {
 		return unitcost;
 	}
@@ -329,7 +340,7 @@ public class CommonVO implements Serializable {
 	 * Sets unitcost.
 	 *
 	 * @param unitcost the unitcost
-     */
+	 */
 	public void setUnitcost(BigDecimal unitcost) {
 		this.unitcost = unitcost;
 	}
@@ -338,7 +349,7 @@ public class CommonVO implements Serializable {
 	 * Gets supplier.
 	 *
 	 * @return the supplier
-     */
+	 */
 	public BigDecimal getSupplier() {
 		return supplier;
 	}
@@ -347,7 +358,7 @@ public class CommonVO implements Serializable {
 	 * Sets supplier.
 	 *
 	 * @param supplier the supplier
-     */
+	 */
 	public void setSupplier(BigDecimal supplier) {
 		this.supplier = supplier;
 	}
@@ -356,7 +367,7 @@ public class CommonVO implements Serializable {
 	 * Gets attr 1.
 	 *
 	 * @return the attr 1
-     */
+	 */
 	public String getAttr1() {
 		return attr1;
 	}
@@ -365,7 +376,7 @@ public class CommonVO implements Serializable {
 	 * Sets attr 1.
 	 *
 	 * @param attr1 the attr 1
-     */
+	 */
 	public void setAttr1(String attr1) {
 		this.attr1 = attr1;
 	}
@@ -374,7 +385,7 @@ public class CommonVO implements Serializable {
 	 * Gets serialversionuid.
 	 *
 	 * @return the serialversionuid
-     */
+	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -383,7 +394,7 @@ public class CommonVO implements Serializable {
 	 * Gets m.
 	 *
 	 * @return the m
-     */
+	 */
 	public String getM() {
 		return m;
 	}
@@ -392,7 +403,7 @@ public class CommonVO implements Serializable {
 	 * Sets m.
 	 *
 	 * @param m the m
-     */
+	 */
 	public void setM(String m) {
 		this.m = m;
 	}
