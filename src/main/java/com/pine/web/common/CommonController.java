@@ -100,6 +100,12 @@ public class CommonController implements HandlerExceptionResolver
 	 */
 	@RequestMapping("/excelDownload")
 	public ModelAndView excelDownload(@ModelAttribute CommonVO vo) {
+		vo.setHeaderColumns("아이템아이디`제품아이디`가격`단위`제고`상태`속성");
+		vo.setProperties("itemid`productid`listprice`unitcost`supplier`status`attr1");
+
+		vo.setHeaderArray(vo.getHeaderColumns().split("`"));
+		vo.setDataArray(vo.getProperties().split("`"));
+
 		return new ModelAndView(svc.buildExcelView(vo));
 	}
 

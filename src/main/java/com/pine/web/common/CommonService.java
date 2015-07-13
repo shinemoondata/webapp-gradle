@@ -215,15 +215,11 @@ public class CommonService {
 	 */
 	public ExcelView buildExcelView(CommonVO to) {
 
-		String[] userHeaderColumns = { "아이템아이디", "제품아이디", "가격", "단위","제고","상태","속성"  };
-
-		String[] properties = { "itemid", "productid", "listprice", "unitcost","supplier","status","attr1" };
-
 		String filename = new SimpleDateFormat("yyyyMMdd").format(new Date()) + ".xls";
 
 		List list = mapper.selectItemList( to);
 
-		ExcelView view = new ExcelView(filename, properties,userHeaderColumns, list );
+		ExcelView view = new ExcelView(filename, to.getDataArray(),to.getHeaderArray(), list );
 
 		return view;
 	}

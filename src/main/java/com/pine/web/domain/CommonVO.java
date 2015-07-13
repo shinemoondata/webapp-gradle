@@ -13,6 +13,7 @@ public class CommonVO implements Serializable {
 
 	private static final long serialVersionUID = 8751282105532159742L;
 
+
 	/**
 	 * Instantiates a new Common vO.
 	 *
@@ -56,6 +57,17 @@ public class CommonVO implements Serializable {
 	private BigDecimal unitcost;
 	private BigDecimal supplier;
 	private String attr1;
+
+	private String HeaderColumns;
+
+	private String properties;
+
+
+	private String[] HeaderArray;
+
+	private String[] DataArray;
+	private String FileName;
+
 
 	/**
 	 * Gets userid.
@@ -408,4 +420,43 @@ public class CommonVO implements Serializable {
 		this.m = m;
 	}
 
+	public String getHeaderColumns() {
+		return HeaderColumns;
+	}
+
+	public void setHeaderColumns(String headerColumns) {
+		HeaderColumns = headerColumns;
+	}
+
+	public String getProperties() {
+		return properties;
+	}
+
+	public void setProperties(String properties) {
+		this.properties = properties;
+	}
+
+	public String[] getHeaderArray() {
+		return HeaderArray;
+	}
+
+	public void setHeaderArray(String[] headerArray) {
+		HeaderArray = headerArray;
+	}
+
+	public String[] getDataArray() {
+		return DataArray;
+	}
+
+	public void setDataArray(String[] dataArray) {
+		DataArray = dataArray;
+	}
+
+	public String getFileName() {
+		return FileName;
+	}
+
+	public void setFileName(String fileName) {
+		FileName = fileName;
+	}
 }
