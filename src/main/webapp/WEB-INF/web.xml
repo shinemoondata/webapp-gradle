@@ -67,6 +67,7 @@
 		<url-pattern>*.json</url-pattern>
 		<url-pattern>*.xml</url-pattern>
 
+
 	</servlet-mapping>
 
 

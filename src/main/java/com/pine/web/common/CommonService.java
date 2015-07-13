@@ -1,7 +1,9 @@
 package com.pine.web.common;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -21,6 +23,7 @@ import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.common.ExcelView;
 import com.pine.web.domain.CommonVO;
 import com.pine.web.persistence.CommonMapper;
 
@@ -190,5 +193,20 @@ public class CommonService {
 		zos.close();
 	}
 
+
+	public ExcelView buildExcelView(CommonVO to) {
+
+		String[] userHeaderColumns = { "아이템아이디", "제품아이디", "가격", "단위","제고","상태","속성"  };
+
+		String[] properties = { "itemid", "productid", "listprice", "unitcost","supplier","status","attr1" };
+
+		String filename = new SimpleDateFormat("yyyyMMdd").format(new Date()) + ".xls";
+
+		List list = mapper.selectItemList( to);
+
+		ExcelView view = new ExcelView(filename, properties,userHeaderColumns, list );
+
+		return view;
+	}
 
 }

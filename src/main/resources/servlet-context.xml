@@ -20,6 +20,7 @@
 							<map>
 								<entry key="json" value="application/json" />
 								<entry key="xml" value="application/xml" />
+								<!--<entry key="xlsx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />-->
 							</map>
 						</constructor-arg>
 					</bean>
@@ -33,6 +34,7 @@
 				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<property name="marshaller" ref="jaxb2Marshaller"></property>
 				</bean>
+				<!--<bean name="excelView" class="com.common.ExcelView" />-->
 			</list>
 		</property>
 	</bean>

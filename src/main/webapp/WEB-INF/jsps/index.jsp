@@ -16,6 +16,7 @@ $(window).load(function() {
 	$('#popup_member').click(function() 		{	fn_go(3);	 return false;});
 	$('#fileupload').click(function() 		{	fn_go(4);	 return false;});
 	$('#multidownload').click(function() 		{	fn_go(5);	 return false;});
+	$('#exceldownload').click(function() 		{	fn_go(6);	 return false;});
 
 });
 function fn_go(type)
@@ -39,6 +40,9 @@ function fn_go(type)
 	}else if(type == 5){
 		url = 'fileDownload.pms';
 		window.open(url);
+	}else if(type == 6){
+		url = 'excelDownload.pms';
+		window.open(url);
 	}
 }
  
@@ -58,5 +62,6 @@ function _cbGo(data)
 	<button type="button" class="btn btn-default btn-xs" id="popup_member">경로체크</button>
 	<button type="button" class="btn btn-default btn-xs" id="fileupload">파일업로드(드래그앤드롭)</button>
 	<button type="button" class="btn btn-default btn-xs" id="multidownload">파일다운로드(다중파일.zip)</button>
+	<button type="button" class="btn btn-default btn-xs" id="exceldownload">엑셀다운로드</button>
 </div>
 

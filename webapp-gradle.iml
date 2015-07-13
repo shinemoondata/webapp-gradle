@@ -90,5 +90,14 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="Gradle: org.apache.poi:poi:3.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.poi:poi-ooxml:3.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.poi:poi-ooxml-schemas:3.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-beanutils:commons-beanutils:1.9.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
   </component>
 </module>
