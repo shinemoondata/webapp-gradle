@@ -143,7 +143,9 @@ public class ExcelView extends AbstractExcelView {
 			header.setHeight((short) 400);
 			for (int i = 0; i < properties.length; i++) {
 				HSSFCell cell = header.createCell(i);
+
 				HSSFCellStyle cellStyle = workbook.createCellStyle();
+
 				cellStyle.setFillForegroundColor(HSSFColor.LIGHT_CORNFLOWER_BLUE.index);
 				cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
 				cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
@@ -153,12 +155,14 @@ public class ExcelView extends AbstractExcelView {
 				font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
 				cellStyle.setFont(font);
 				cell.setCellStyle(cellStyle);
-				if (i == 0) {
+
+				/*if (i == 0) {
 					HSSFPatriarch patriarch = sheet.createDrawingPatriarch();
 					HSSFComment comment = patriarch.createComment(new HSSFClientAnchor(0, 0, 0, 0, (short) 1, 1, (short) 4, 4));
 					comment.setString(new HSSFRichTextString("Powered By Hengtian"));
 					cell.setCellComment(comment);
 				}
+				*/
 				if (titles.length > i && titles[i] != null) {
 					cell.setCellValue(titles[i]);
 				} else {
@@ -176,12 +180,8 @@ public class ExcelView extends AbstractExcelView {
 		if (data != null) {
 			for (Object item : data) {
 				HSSFRow row = sheet.createRow(rowNumber);
-				HSSFCellStyle cellStyle = workbook.createCellStyle();
-				HSSFDataFormat format = workbook.createDataFormat();
-				cellStyle.setDataFormat(format.getFormat("@"));
 				for (int i = 0; i < properties.length; i++) {
 					HSSFCell cell = row.createCell(i);
-					cell.setCellStyle(cellStyle);
 					if (converters != null && converters.length > i && converters[i] != null) {
 						Class<?> clazz = PropertyUtils.getPropertyType(item, properties[i]);
 						ConvertUtils.register(converters[i], clazz);
@@ -212,11 +212,6 @@ public class ExcelView extends AbstractExcelView {
 			for (String content : contents) {
 				HSSFRow row = sheet.createRow(rowNumber);
 				HSSFCell cell = row.createCell(0);
-				HSSFCellStyle cellStyle = workbook.createCellStyle();
-				HSSFFont font = workbook.createFont();
-				font.setColor(HSSFColor.GREY_50_PERCENT.index);
-				cellStyle.setFont(font);
-				cell.setCellStyle(cellStyle);
 				cell.setCellValue(content);
 				rowNumber++;
 			}
