@@ -41,7 +41,9 @@ function fn_go(type)
 		url = 'fileDownload.pms';
 		window.open(url);
 	}else if(type == 6){
-		url = 'excelDownload.pms?HeaderColumns=아이템아이디`제품아이디`가격`단위`제고`상태`속성&Properties=itemid`productid`listprice`unitcost`supplier`status`attr1';
+		var param ="HeaderColumns=아이템아이디`제품아이디`가격`단위`제고`상태`속성";
+			param += "&Properties=itemid`productid`listprice`unitcost`supplier`status`attr1";
+		url = 'excelDownload.pms?'+param;
 		window.open(url);
 	}
 }
