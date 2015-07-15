@@ -15,5 +15,4 @@ Complete List
 ToDo List
 
 1. xml ( list는 xml로 가능하게 확인중)
-2. pdf download
-  -itext로 한글 부분 체크는 완료되었으나 css의 부분 적용으로 효용성 떨어짐. 다른 방식 찾아봐야할듯
+2. lambda expression 공부

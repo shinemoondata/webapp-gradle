@@ -1,10 +1,6 @@
 package com.pine.web.common;
 
-import java.util.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.pine.web.domain.CommonVO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +13,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pine.web.domain.CommonVO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
 
 
 /**
@@ -42,9 +40,18 @@ public class CommonController implements HandlerExceptionResolver
 	@RequestMapping("/index")
 	public ModelAndView index(@ModelAttribute CommonVO vo) {
 		ModelAndView view = new ModelAndView();
-		if ("search".equals(vo.getM())) { // 파라미터 값에 따라 json으로 분기
-			view.addObject("rows", (List) svc.selectItemList(vo));
-		}
+//		if ("search".equals(vo.getM())) { // 파라미터 값에 따라 json으로 분기
+			List<CommonVO> list = svc.selectItemList(vo);
+			view.addObject("rows", list);
+//		}
+		//list.forEach(to -> {System.out.println("ss::::::"+to.getItemid()); }    );
+
+		List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+
+		Collections.sort(names, (a, b) -> a.compareTo(b));
+
+		//names.forEach(System.out::println);
+
 		return view;
 	}
 
