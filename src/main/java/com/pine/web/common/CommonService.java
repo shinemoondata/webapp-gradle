@@ -178,8 +178,7 @@ public class CommonService {
 
 			} catch (FileNotFoundException fnfe) {
 				// If the file does not exists, write an error entry instead of file contents
-				zos.write(("ERROR: Could not find file " + file.getName())
-						.getBytes());
+				zos.write(("ERROR: Could not find file " + file.getName()).getBytes());
 				zos.closeEntry();
 
 				if(logger.isDebugEnabled()){
