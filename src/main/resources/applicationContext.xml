@@ -57,7 +57,7 @@
 	-->
 
 
-	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactoryBean" class="com.common.RefreshableSqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="typeAliasesPackage" value="com.pine.web.domain" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
