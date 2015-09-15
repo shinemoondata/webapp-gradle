@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%><!DOCTYPE html>
-<html lang="ko">
+<html class="no-js" lang="ko">
 <head>
 	<title><sitemesh:write property='title' /></title>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta http-equiv="Cache-Control" content="no-store"/>
 	<meta http-equiv="Pragma" content="no-cache"/>
 	<meta http-equiv="Expires" content="0"/>
@@ -12,24 +13,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="renderer" content="webkit">
 
-
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/js/jWindow/jquery.windows-engine.css"/>
-
-
-	<script type="text/javascript" src="/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/vendor/modernizr-2.8.3.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
-
-	<script type="text/javascript" src="/js/jquery.blockUI.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="/js/plugins.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript" src="/js/jWindow/jquery.windows-engine.js" charset="utf-8"></script>
-
 	<script type="text/javascript" src="/js/String.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/js/jscript.js" charset="utf-8"></script>
 
 
 	<sitemesh:write property='head'/>
-	<script type="text/javascript" >
-	$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
-	</script>
+
 </head> 
 <body>
 <div id="debug"></div>
