@@ -8,7 +8,20 @@
 <title>아이템 목록</title>
 <style>
 li {padding-bottom:10px}
+
+
+.hn {font-family: 'Hanna';font-size:14pt;}
+.nbs {font-family: 'Nanum Brush Script';font-size:14pt;}
+.ng {font-family: 'Nanum Gothic';font-size:14pt;}
+.ngc {font-family: 'Nanum Gothic Coding';font-size:14pt;}
+.nm {font-family: 'Nanum Myeongjo';font-size:14pt;}
+.nps {font-family: 'Nanum Pen Script';font-size:14pt;}
+.jg {font-family: 'Jeju Gothic', sans-serif;font-size:14pt;}
+.jh {font-family: 'Jeju Hallasan', cursive;font-size:14pt;}
+.jm {font-family: 'Jeju Myeongjo', serif;font-size:14pt;}
+.kb {font-family: 'KoPub Batang', serif;font-size:14pt;}
 </style>
+
 <script>
 $(window).load(function() {
 	$('#handlebars').click(function() 		{	fn_go(1);		 return false;});
@@ -80,3 +93,15 @@ function _cbGo(data)
 
 <div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
+
+
+<div class="hn">Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="nbs">Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="ng">Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="ngc">Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="nm">Nanum Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="nps">Nanum Pen Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="jg">Jeju Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="jh">Jeju Hallasan Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="jm">Jeju Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="kb">KoPub Batang Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
