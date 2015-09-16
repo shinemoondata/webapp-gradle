@@ -67,3 +67,12 @@ function _cbGo(data)
 	<button type="button" class="btn btn-default btn-xs" id="exceldownload">엑셀다운로드</button>
 </div>
 
+<div style="font-family:'Gulim';">Gulim웹폰트 테스트10liLIoO</div>
+<div style="font-family:'Dotum';">Dotum웹폰트 테스트10liLIoO</div>
+
+<div style="font-family:'NotoSans';font-weight: 100; ">Noto Sans100웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSans';font-weight: 200; ">Noto Sans200웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSans';font-weight: 300; ">Noto Sans300웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSans';font-weight: 400; ">Noto Sans400웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
