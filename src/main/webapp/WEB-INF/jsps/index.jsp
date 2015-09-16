@@ -21,6 +21,28 @@ li {padding-bottom:10px}
 .jm {font-family: 'Jeju Myeongjo', serif;font-size:14pt;}
 .kb {font-family: 'KoPub Batang', serif;font-size:14pt;}
 </style>
+<script type="text/javascript">
+	WebFontConfig = {
+		custom: {
+			families: ['Hanna','Nanum Brush Script','Nanum Gothic','Nanum Gothic Coding','Nanum Myeongjo','Nanum Pen Script','Jeju Gothic','Jeju Hallasan','Jeju Myeongjo','KoPub Batang'],
+			urls: ['http://fonts.googleapis.com/earlyaccess/hanna.css',	'http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css',
+					'http://fonts.googleapis.com/earlyaccess/nanumgothic.css',	'http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css',
+					'http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css',	'http://fonts.googleapis.com/earlyaccess/nanumpenscript.css',
+					'http://fonts.googleapis.com/earlyaccess/jejugothic.css',	'http://fonts.googleapis.com/earlyaccess/jejuhallasan.css',
+					'http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css',	'http://fonts.googleapis.com/earlyaccess/kopubbatang.css'
+			]
+		}
+	};
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				'://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+</script>
 
 <script>
 $(window).load(function() {
