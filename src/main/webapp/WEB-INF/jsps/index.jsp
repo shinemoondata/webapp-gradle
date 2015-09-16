@@ -70,9 +70,13 @@ function _cbGo(data)
 <div style="font-family:'Gulim';">Gulim웹폰트 테스트10liLIoO</div>
 <div style="font-family:'Dotum';">Dotum웹폰트 테스트10liLIoO</div>
 
-<div style="font-family:'NotoSans';font-weight: 100; ">Noto Sans100웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSans';font-weight: 200; ">Noto Sans200웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSans';font-weight: 300; ">Noto Sans300웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSans';font-weight: 400; ">Noto Sans400웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansThin';">NotoSansThin 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansLight';">NotoSansLight 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansRegular';">NotoSansRegular 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansDemiLight';">NotoSansDemiLight 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansMedium';">NotoSansMedium 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansBold';">NotoSansBold 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NotoSansBlack';">NotoSansBlack 웹폰트 테스트10liLIoO</div>
+
 <div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>

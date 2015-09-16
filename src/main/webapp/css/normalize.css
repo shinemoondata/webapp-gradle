@@ -8,12 +8,14 @@
 /*noinspection ALL*/
 @font-face{
   font-family:'NanumBarunGothic';
+  font-style: normal;
+  font-weight: normal;
   src:local(¡Ø), url(font/NanumBarunGothic.woff) format(¡®woff¡¯)
 }
 @font-face {
-  font-family: 'NotoSans';
+  font-family: 'NotoSansThin';
   font-style: normal;
-  font-weight: 100;
+  font-weight: normal;
   src: local('Noto Sans Thin'), local('Noto Sans Thin'), local('Noto Sans Thin');
   src: url(font/NotoSans-Thin.eot);
   src: url(font/NotoSans-Thin.eot?#iefix) format('embedded-opentype'),
@@ -22,9 +24,9 @@
 }
 
 @font-face {
-  font-family: 'NotoSans';
+  font-family: 'NotoSansLight';
   font-style: normal;
-  font-weight: 200;
+  font-weight: normal;
   src: local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
   src: url(font/NotoSans-Light.eot);
   src: url(font/NotoSans-Light.eot?#iefix) format('embedded-opentype'),
@@ -34,10 +36,10 @@
 
 
 @font-face {
-  font-family: 'NotoSans';
+  font-family: 'NotoSansRegular';
   src: local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   src: url(font/NotoSans-Regular.eot);
   src: url(font/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
   url(font/NotoSans-Regular.woff) format('woff'),
@@ -46,16 +48,48 @@
 
 
 @font-face {
-  font-family: 'NotoSans';
+  font-family: 'NotoSansMedium';
   src: local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url(font/NotoSans-Medium.eot);
   src: url(font/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
   url(font/NotoSans-Medium.woff) format('woff'),
   url(font/NotoSans-Medium.otf) format('truetype');
 }
 
+
+@font-face {
+  font-family: 'NotoSansBold';
+  src: local('Noto Sans Bold'), local('Noto Sans Bold'), local('Noto Sans Bold');
+  font-style: normal;
+  font-weight: normal;
+  src: url(font/NotoSans-Bold.eot);
+  src: url(font/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+  url(font/NotoSans-Bold.woff) format('woff'),
+  url(font/NotoSans-Bold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSansDemiLight';
+  src: local('Noto Sans DemiLight'), local('Noto Sans DemiLight'), local('Noto Sans DemiLight');
+  font-style: normal;
+  font-weight: normal;
+  src: url(font/NotoSans-DemiLight.eot);
+  src: url(font/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+  url(font/NotoSans-DemiLight.woff) format('woff'),
+  url(font/NotoSans-DemiLight.otf) format('truetype');
+}
+@font-face {
+  font-family: 'NotoSansBlack';
+  src: local('Noto Sans Black'), local('Noto Sans Black'), local('Noto Sans Black');
+  font-style: normal;
+  font-weight: normal;
+  src: url(font/NotoSans-Black.eot);
+  src: url(font/NotoSans-Black.eot?#iefix) format('embedded-opentype'),
+  url(font/NotoSans-Black.woff) format('woff'),
+  url(font/NotoSans-Black.otf) format('truetype');
+}
 
 
 html {
