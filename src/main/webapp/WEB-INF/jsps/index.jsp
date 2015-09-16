@@ -10,26 +10,26 @@
 li {padding-bottom:10px}
 
 
-.hn {font-family: 'Hanna';font-size:14pt;}
-.nbs {font-family: 'Nanum Brush Script';font-size:14pt;}
-.ng {font-family: 'Nanum Gothic';font-size:14pt;}
-.ngc {font-family: 'Nanum Gothic Coding';font-size:14pt;}
-.nm {font-family: 'Nanum Myeongjo';font-size:14pt;}
-.nps {font-family: 'Nanum Pen Script';font-size:14pt;}
-.jg {font-family: 'Jeju Gothic', sans-serif;font-size:14pt;}
-.jh {font-family: 'Jeju Hallasan', cursive;font-size:14pt;}
-.jm {font-family: 'Jeju Myeongjo', serif;font-size:14pt;}
-.kb {font-family: 'KoPub Batang', serif;font-size:14pt;}
+.hn {font-family: 'Hanna';font-size:18pt;}
+.nbs {font-family: 'Nanum Brush Script';font-size:18pt;}
+.ng {font-family: 'NanumGothic';font-size:18pt;}
+.ngc {font-family: 'Nanum Gothic Coding';font-size:18pt;}
+.nm {font-family: 'Nanum Myeongjo';font-size:18pt;}
+.nps {font-family: 'Nanum Pen Script';font-size:18pt;}
+.jg {font-family: 'Jeju Gothic', sans-serif;font-size:18pt;}
+.jh {font-family: 'Jeju Hallasan', cursive;font-size:18pt;}
+.jm {font-family: 'Jeju Myeongjo', serif;font-size:18pt;}
+.kb {font-family: 'KoPub Batang', serif;font-size:18pt;}
 </style>
 <script type="text/javascript">
 	WebFontConfig = {
 		custom: {
-			families: ['Hanna','Nanum Brush Script','Nanum Gothic','Nanum Gothic Coding','Nanum Myeongjo','Nanum Pen Script','Jeju Gothic','Jeju Hallasan','Jeju Myeongjo','KoPub Batang'],
+			families: ['Hanna','Nanum Brush Script','Nanum Gothic Coding','Nanum Myeongjo','Nanum Pen Script','Jeju Gothic','Jeju Hallasan','Jeju Myeongjo','KoPub Batang'],
 			urls: ['http://fonts.googleapis.com/earlyaccess/hanna.css',	'http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css',
-					'http://fonts.googleapis.com/earlyaccess/nanumgothic.css',	'http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css',
-					'http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css',	'http://fonts.googleapis.com/earlyaccess/nanumpenscript.css',
-					'http://fonts.googleapis.com/earlyaccess/jejugothic.css',	'http://fonts.googleapis.com/earlyaccess/jejuhallasan.css',
-					'http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css',	'http://fonts.googleapis.com/earlyaccess/kopubbatang.css'
+					'http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css','http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css',
+					'http://fonts.googleapis.com/earlyaccess/nanumpenscript.css', 'http://fonts.googleapis.com/earlyaccess/jejugothic.css',
+					'http://fonts.googleapis.com/earlyaccess/jejuhallasan.css', 'http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css',
+					'http://fonts.googleapis.com/earlyaccess/kopubbatang.css'
 			]
 		}
 	};
@@ -115,6 +115,7 @@ function _cbGo(data)
 
 <div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NanumGothic'";>나눔고딕 웹폰트 테스트10liLIoO</div>
 
 
 <div class="hn">Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>

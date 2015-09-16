@@ -6,13 +6,19 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
-/*noinspection ALL*/
 @font-face{
   font-family:'NanumBarunGothic';
   font-style: normal;
   font-weight: normal;
-  src:local(¡Ø), url(font/NanumBarunGothic.woff) format(¡®woff¡¯)
+  src:local(¡Ø), url(font/NanumBarunGothic.woff)  format('woff')
 }
+@font-face{
+  font-family:'NanumGothic';
+  font-style: normal;
+  font-weight: normal;
+  src:local(¡Ø), url(font/NanumGothic-Regular.woff) format('woff')
+}
+
 @font-face {
   font-family: 'NotoSansThin';
   font-style: normal;
