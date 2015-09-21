@@ -14,6 +14,8 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/jquery.Placeholders.monkey.patch.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/js/jWindow/jquery.windows-engine.css"/>
 	<script type="text/javascript" src="/js/vendor/modernizr-2.8.3.min.js"></script>
 	<script type="text/javascript" src="/js/vendor/jquery-1.11.3.min.js"></script>
@@ -21,12 +23,15 @@
 	<script type="text/javascript" src="/js/plugins.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript" src="/js/jWindow/jquery.windows-engine.js" charset="utf-8"></script>
-	<script type="text/javascript" src="/js/String.js" charset="utf-8"></script>
-	<script type="text/javascript" src="/js/jscript.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/jquery.Placeholders.monkey.patch.min.js" charset="utf-8"></script>
 
 	<!--[if lte IE 8]>
 	<script type="text/javascript" src="/js/es5-shim.min.js"></script>
 	<![endif]-->
+
+	<script type="text/javascript" src="/js/String.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/jscript.js" charset="utf-8"></script>
+
 
 	<sitemesh:write property='head'/>
 

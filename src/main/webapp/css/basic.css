@@ -1,0 +1,122 @@
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+@font-face{
+	font-family:'NanumBarunGothic';
+	font-style: normal;
+	font-weight: normal;
+	src:local(¡Ø), url(font/NanumBarunGothic.woff)  format('woff')
+}
+
+@font-face {
+	font-family: 'NanumGothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url(font/NanumGothic-Regular.eot);
+	src: url(font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+	url(font/NanumGothic-Regular.woff2) format('woff2'),
+	url(font/NanumGothic-Regular.woff) format('woff'),
+	url(font/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'NanumGothic';
+	font-style: normal;
+	font-weight: 700;
+	src: url(font/NanumGothic-Bold.eot);
+	src: url(font/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+	url(font/NanumGothic-Bold.woff2) format('woff2'),
+	url(font/NanumGothic-Bold.woff) format('woff'),
+	url(font/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'NanumGothic';
+	font-style: normal;
+	font-weight: 800;
+	src: url(font/NanumGothic-ExtraBold.eot);
+	src: url(font/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+	url(font/NanumGothic-ExtraBold.woff2) format('woff2'),
+	url(font/NanumGothic-ExtraBold.woff) format('woff'),
+	url(font/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: 'NotoSansThin';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Noto Sans Thin'), local('Noto Sans Thin'), local('Noto Sans Thin');
+	src: url(font/NotoSans-Thin.eot);
+	src: url(font/NotoSans-Thin.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Thin.woff) format('woff'),
+	url(font/NotoSans-Thin.otf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NotoSansLight';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
+	src: url(font/NotoSans-Light.eot);
+	src: url(font/NotoSans-Light.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Light.woff) format('woff'),
+	url(font/NotoSans-Light.otf) format('truetype');
+}
+
+
+@font-face {
+	font-family: 'NotoSansRegular';
+	src: local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
+	font-style: normal;
+	font-weight: normal;
+	src: url(font/NotoSans-Regular.eot);
+	src: url(font/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Regular.woff) format('woff'),
+	url(font/NotoSans-Regular.otf) format('truetype');
+}
+
+
+@font-face {
+	font-family: 'NotoSansMedium';
+	src: local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
+	font-style: normal;
+	font-weight: normal;
+	src: url(font/NotoSans-Medium.eot);
+	src: url(font/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Medium.woff) format('woff'),
+	url(font/NotoSans-Medium.otf) format('truetype');
+}
+
+
+@font-face {
+	font-family: 'NotoSansBold';
+	src: local('Noto Sans Bold'), local('Noto Sans Bold'), local('Noto Sans Bold');
+	font-style: normal;
+	font-weight: normal;
+	src: url(font/NotoSans-Bold.eot);
+	src: url(font/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Bold.woff) format('woff'),
+	url(font/NotoSans-Bold.otf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NotoSansDemiLight';
+	src: local('Noto Sans DemiLight'), local('Noto Sans DemiLight'), local('Noto Sans DemiLight');
+	font-style: normal;
+	font-weight: normal;
+	src: url(font/NotoSans-DemiLight.eot);
+	src: url(font/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-DemiLight.woff) format('woff'),
+	url(font/NotoSans-DemiLight.otf) format('truetype');
+}
+@font-face {
+	font-family: 'NotoSansBlack';
+	src: local('Noto Sans Black'), local('Noto Sans Black'), local('Noto Sans Black');
+	font-style: normal;
+	font-weight: normal;
+	src: url(font/NotoSans-Black.eot);
+	src: url(font/NotoSans-Black.eot?#iefix) format('embedded-opentype'),
+	url(font/NotoSans-Black.woff) format('woff'),
+	url(font/NotoSans-Black.otf) format('truetype');
+}
