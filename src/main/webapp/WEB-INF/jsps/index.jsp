@@ -10,16 +10,16 @@
 li {padding-bottom:10px}
 
 
-.hn {font-family: 'Hanna';font-size:18pt;}
-.nbs {font-family: 'Nanum Brush Script';font-size:18pt;}
-.ng {font-family: 'NanumGothic';font-size:18pt;}
-.ngc {font-family: 'Nanum Gothic Coding';font-size:18pt;}
-.nm {font-family: 'Nanum Myeongjo';font-size:18pt;}
-.nps {font-family: 'Nanum Pen Script';font-size:18pt;}
-.jg {font-family: 'Jeju Gothic', sans-serif;font-size:18pt;}
-.jh {font-family: 'Jeju Hallasan', cursive;font-size:18pt;}
-.jm {font-family: 'Jeju Myeongjo', serif;font-size:18pt;}
-.kb {font-family: 'KoPub Batang', serif;font-size:18pt;}
+.hn {font-family: 'Hanna';}
+.nbs {font-family: 'Nanum Brush Script';}
+.ng {font-family: 'NanumGothic';}
+.ngc {font-family: 'Nanum Gothic Coding';}
+.nm {font-family: 'Nanum Myeongjo';}
+.nps {font-family: 'Nanum Pen Script';}
+.jg {font-family: 'Jeju Gothic', sans-serif;}
+.jh {font-family: 'Jeju Hallasan', cursive;}
+.jm {font-family: 'Jeju Myeongjo', serif;}
+.kb {font-family: 'KoPub Batang', serif;}
 </style>
 <script type="text/javascript">
 	WebFontConfig = {
@@ -102,8 +102,9 @@ function _cbGo(data)
 	<button type="button" class="btn btn-default btn-xs" id="exceldownload">엑셀다운로드</button>
 </div>
 
-<div style="font-family:'Gulim';">Gulim웹폰트 테스트10liLIoO</div>
-<div style="font-family:'Dotum';">Dotum웹폰트 테스트10liLIoO</div>
+<div style="font-family:'Gulim';">굴림 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'Dotum';">돋움 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'Malgun Gothic';">맑은고딕 웹폰트 테스트10liLIoO</div>
 
 <div style="font-family:'NotoSansThin';">NotoSansThin 웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NotoSansLight';">NotoSansLight 웹폰트 테스트10liLIoO</div>
@@ -117,13 +118,13 @@ function _cbGo(data)
 <div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NanumGothic'";>나눔고딕 웹폰트 테스트10liLIoO</div>
 
-
-<div class="hn">Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="nbs">Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="ng">Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+
+<div class="nbs">Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="ngc">Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="nm">Nanum Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="nps">Nanum Pen Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="hn">Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="jg">Jeju Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="jh">Jeju Hallasan Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="jm">Jeju Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
