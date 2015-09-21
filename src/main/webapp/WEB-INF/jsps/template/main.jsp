@@ -23,6 +23,7 @@
 	<script type="text/javascript" src="/js/plugins.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript" src="/js/jWindow/jquery.windows-engine.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/placeholders.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/js/jquery.Placeholders.monkey.patch.min.js" charset="utf-8"></script>
 	<!--[if lte IE 8]>
 	<script type="text/javascript" src="/js/es5-shim.min.js"></script>
