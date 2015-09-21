@@ -94,12 +94,12 @@ function _cbGo(data)
 <div >
 	메뉴 테스트(레이어팝업)
 	<br/>
-	<button type="button" class="btn btn-primary btn-xs" id="handlebars">Handlebars</button>
-	<button type="button" class="btn btn-info btn-xs" id="jqgrid">jqgrid</button>
-	<button type="button" class="btn btn-default btn-xs" id="popup_member">경로체크</button>
-	<button type="button" class="btn btn-default btn-xs" id="fileupload">파일업로드(드래그앤드롭)</button>
-	<button type="button" class="btn btn-default btn-xs" id="multidownload">파일다운로드(다중파일.zip)</button>
-	<button type="button" class="btn btn-default btn-xs" id="exceldownload">엑셀다운로드</button>
+	<button type="button" id="handlebars">Handlebars</button>
+	<button type="button" id="jqgrid">jqgrid</button>
+	<button type="button" id="popup_member">경로체크</button>
+	<button type="button" id="fileupload">파일업로드(드래그앤드롭)</button>
+	<button type="button" id="multidownload">파일다운로드(다중파일.zip)</button>
+	<button type="button" id="exceldownload">엑셀다운로드</button>
 </div>
 
 <div style="font-family:'Gulim';">굴림 웹폰트 테스트10liLIoO</div>
