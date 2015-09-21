@@ -118,7 +118,7 @@ function _cbGo(data)
 <div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
 <div style="font-family:'NanumGothic'";>나눔고딕 웹폰트 테스트10liLIoO</div>
 
-<div class="ng">Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+<div class="ng">Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890</div>
 
 <div class="nbs">Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
 <div class="ngc">Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
