@@ -33,10 +33,10 @@ function fn_home(){
 
 
 <div style="float:right;padding-right:10px">
-	<button type="button" class="btn btn-primary btn-xs" id="save">저장</button>
-	<button type="button" class="btn btn-info btn-xs" id="searchList">조회</button>
-	<button type="button" class="btn btn-default btn-xs" id="clear">초기화</button>
-	<button type="button" class="btn btn-default btn-xs" id="home">닫기</button>
+	<button type="button" id="save">저장</button>
+	<button type="button" id="searchList">조회</button>
+	<button type="button" id="clear">초기화</button>
+	<button type="button" id="home">닫기</button>
 
 
 </div>

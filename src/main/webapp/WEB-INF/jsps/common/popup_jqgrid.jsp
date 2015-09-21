@@ -6,9 +6,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <head>
 <title>아이템 목록</title>
-<link rel="stylesheet" type="text/css" href="/js/themes/smoothness/jquery-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="/js/themes/base/jquery-ui.min.css"/>
 <link rel="stylesheet" type="text/css" href="/js/jqgrid/css/ui.jqgrid.css"/>
-<script type="text/javascript" src="/js/jquery-ui.min.js" ></script>
 <script type="text/javascript" src="/js/jquery.jqGrid.min.js" ></script>
 <script type="text/javascript" src="/js/jqgrid/i18n/grid.locale-kr.js"></script>
 
