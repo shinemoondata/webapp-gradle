@@ -12,11 +12,19 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -216,11 +224,64 @@ public class CommonService {
 
 		String filename = new SimpleDateFormat("yyyyMMdd").format(new Date()) + ".xls";
 
-		List list = mapper.selectItemList( to);
+		List list = mapper.selectItemList(to);
 
 		ExcelView view = new ExcelView(filename, to.getDataArray(),to.getHeaderArray(), list );
 
 		return view;
 	}
+
+
+	public String xmlSendCharsetTest(String urlStr,String xmlDataStr){
+		// xml 형식 전송시에 utf-8 로 전송하는것과 리턴값 utf-8 로 받기
+		String rtn="";
+		try {
+			URL url = new URL(urlStr);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+			conn.setRequestMethod("POST");				// PUT 또는 POST으로 전송
+			conn.setRequestProperty("Content-Type", "application/xml; charset=utf-8");
+			conn.setRequestProperty("Pragma", "no-cache");
+
+			conn.setDoOutput(true);
+			OutputStream os = conn.getOutputStream();
+			os.write(xmlDataStr.getBytes("utf-8"));				// 데이터 전송
+			os.flush();
+			os.close();
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream() ,"utf-8") );
+			String resData = "";
+			String chunked = "";
+
+			while((chunked = reader.readLine()) != null) {
+				resData += chunked;
+			}
+			reader.close();
+
+			// utf-8 받은 xml의 한글 깨짐 방지와 요소 가져오기
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setIgnoringElementContentWhitespace(true);
+			factory.setValidating(false);
+			factory.setNamespaceAware(true);
+			DocumentBuilder docBuilder = factory.newDocumentBuilder();//xml parsing
+			Document doc = docBuilder.parse(new InputSource(new StringReader(resData.toString()  )  ));
+
+			rtn = getTextValue(doc.getDocumentElement().getElementsByTagName("RESULT"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rtn;
+	}
+	public String getTextValue(NodeList nodeList) {
+		String rtn = "";
+		for(int i=0; i < nodeList.getLength(); i++){
+			Element row = (Element)nodeList.item(i);
+			rtn = row.getTextContent();
+
+		}
+		return rtn;
+	}
+
 
 }
