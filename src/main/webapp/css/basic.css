@@ -7,7 +7,7 @@
 	font-family:'NanumBarunGothic';
 	font-style: normal;
 	font-weight: normal;
-	src:local(¡Ø), url(font/NanumBarunGothic.woff)  format('woff')
+	src:local('Nanum Barun Gothic Regular'), url(font/NanumBarunGothic.woff)  format('woff')
 }
 
 @font-face {
