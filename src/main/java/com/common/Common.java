@@ -2,14 +2,10 @@ package com.common;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
-
 
 /**
  *  Class Name : Common.java
@@ -18,10 +14,10 @@ import java.util.*;
  *
  *   Mod Date       Modifier    Description
  *   -----------    --------    ---------------------------
- *   2009. 7. 29.   shaby       최초 생성
+ *   2015. 7. 29.   shaby       최초 생성
  *
  *  @author shaby
- *  @since 2009. 7. 29.
+ *  @since 2015. 7. 29.
  *  @version 1.0
  */
 public  class Common {
@@ -45,7 +41,7 @@ public  class Common {
 	}
 
 
-	public static String printByOutputStream(URL url,String charset) throws Exception ,IOException {
+	public static String printByOutputStream(URL url,String charset)  {
 		URLConnection conn=null;
 		String result = "";
 		try {
@@ -99,17 +95,7 @@ public  class Common {
 		}
 		return b;
 	}
-	/**
-	 *  현재 날짜를 패턴에 맞게 가져오기
-	 *  @param  pattern
-	 *  @return String
-	 **/
-	public static String getDateFormat(String pattern){
-		java.util.Date now =  new java.util.Date();
-		SimpleDateFormat ff  = new SimpleDateFormat(pattern);
-		String wrtday = ff.format(now);
-		return wrtday;
-	}
+
 	/**
 	 *  엑셀 파일 헤더
 	 *  @param  str 문자열
@@ -166,86 +152,16 @@ public  class Common {
 		}
 	}
 
-
-	public static Map<String,Object> trimQuery(Map<String,Object> map)
-	{
-		if (map != null){
-			Set<String> keySet = map.keySet();
-			Iterator<String> it =  keySet.iterator();
-			while (it.hasNext()){
-				String name = it.next();
-				if (name.indexOf("etc") > -1){
-					map.put(name,"");
-				}
-			}
-		}
-		return map;
-	}
-
-
 	/**
-	 *  임의의 날자를 원하는 패턴 형식으로 표현하기
-	 *  @param pattern 날짜  패턴
+	 *  현재 날짜를 패턴에 맞게 가져오기
+	 *  @param  pattern
 	 *  @return String
-	 */
-	public static String getDate(String pattern)  {
+	 **/
+	public static String getDateFormat(String pattern){
 		java.util.Date now =  new java.util.Date();
 		SimpleDateFormat ff  = new SimpleDateFormat(pattern);
 		String wrtday = ff.format(now);
 		return wrtday;
-	}
-
-	/**
-	 * 피벗 처리를 위한 구조 세팅
-	 * @return List
-	 * @throws Exception
-	 */
-	@SuppressWarnings({"unchecked", "rawtypes"})
-	public static List<String> SettingStruct(List<Object> src , String mappingName ) {
-		List<String> col = new ArrayList<String>(); // 구조
-		try {
-			for(int i=0;i<src.size(); i++){
-				Map<String,Object> s = (HashMap)src.get(i);
-				col.add((String)s.get(mappingName));
-			}
-		} catch (Exception e) {
-
-		}
-		return col;
-	}
-	/**
-	 * 피벗 처리를 위한 구조 세팅
-	 * @return List
-	 * @throws Exception
-	 */
-	public static List<String> SettingStruct(String Map ) {
-		List<String> col = new ArrayList<String>(); // 구조
-		try {
-			StringTokenizer src =new StringTokenizer(Map,"|");
-			while(src.hasMoreTokens()){
-				col.add(src.nextToken());
-			}
-		} catch (Exception e) {
-		}
-		return col;
-	}
-	/**
-	 * 데이터부를 2차원 배열에 적재
-	 * @return List
-	 * @throws Exception
-	 */
-	public static String[][] SettingArray(int row, int col ) {
-		String[][] arr = new String[row][col];
-		try {
-			for(int i=0;i< arr.length;i++){
-				for(int j=0;j< arr[i].length;j++) {
-					arr[i][j] = "0";
-				}
-			}
-		} catch (Exception e) {
-
-		}
-		return arr;
 	}
 
 }
