@@ -3,9 +3,11 @@ package com.common;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 
 /**
  *  Class Name : Common.java
@@ -22,23 +24,6 @@ import java.text.SimpleDateFormat;
  */
 public  class Common {
 
-	/**
-	 * <p>문자 또는 숫자가 비어있는지 체크한다.</P>
-	 *
-	 * <pre>
-	 * StringUtil.isEmpty(null)    = true
-	 * StringUtil.isEmpty("")      = true
-	 * StringUtil.isEmpty("  ")    = false
-	 * StringUtil.isEmpty(" bob ") = false
-	 * StringUtil.isEmpty(123)     = false
-	 * </pre>
-	 *
-	 * @param object   (문자형, 숫자형 객체)
-	 * @return boolean (체크결과)
-	 */
-	public static boolean isEmpty(Object object) {
-		return object == null || String.valueOf(object).length() == 0;
-	}
 
 
 	public static String printByOutputStream(URL url,String charset)  {
@@ -162,6 +147,110 @@ public  class Common {
 		SimpleDateFormat ff  = new SimpleDateFormat(pattern);
 		String wrtday = ff.format(now);
 		return wrtday;
+	}
+
+
+	/**
+	 * Null String을 "" String으로 바꿔준다.
+	 *
+	 * @param str
+	 *            Null 문자열
+	 *
+	 * @return "" 문자열(null이 아닐 경우는 변환할 문자열이 그대로 리턴)
+	 */
+	static public String NVL(String str) {
+		if (str == null) {
+			return "";
+		}
+
+		return str;
+	}
+
+	/**
+	 * Null Object을 "" String으로 바꿔준다.
+	 *
+	 * @param str
+	 * @return
+	 * @exception ExpException
+	 */
+	static public String NVL(Object str) {
+		if (str == null) {
+			return "";
+		}
+
+
+		return str.toString();
+	}
+
+	// 문자열이 null인경우 replace_str을 Return한다.
+	// 사용 예) 테이블의 <td>str</td>에서 str이 null인 경우
+	// replate_str이 &nbsp;로 지정한다.
+	/**
+	 * 문자열이 null인경우 replace_str을 Return한다. 사용 예) 테이블의
+	 * <td>str</td>
+	 * 에서 str이 null인 경우 replate_str이 &nbsp;로 지정한다.
+	 *
+	 * @param str
+	 *            Null 문자열
+	 * @param replace_str
+	 *            변환할 문자열
+	 * @return 변환할 문자열
+	 */
+	static public Object NVL(Object str, Object replace_str)  {
+
+		if (str instanceof Integer || str instanceof Long || str instanceof Double || str instanceof Float){
+			if (str == null || (Integer)str == 0) {
+				return replace_str;
+			}else{
+				return str;
+			}
+		}else{
+			if (str == null || "".equals(str) ) {
+				return replace_str;
+			}else{
+				return str;
+			}
+		}
+	}
+	static public String NVL(String str, String replace_str) {
+		if (str == null || "".equals(str) ) {
+			return replace_str;
+		}else{
+			return str;
+		}
+	}
+	/**
+	 * Null이거나 빈값(빈 문자열, 빈 컬렉션)인지 검사
+	 *
+	 * @param object
+	 * @return
+	 */
+	public static boolean isEmpty(Object object) throws Exception {
+		if (object == null) {
+			return true;
+		}
+
+		if (object instanceof String) {
+			String str = (String) object;
+			return str.length() == 0;
+		}
+
+		if (object instanceof Collection) {
+			Collection collection = (Collection) object;
+			return collection.size() == 0;
+		}
+
+		if (object.getClass().isArray()) {
+			try {
+				if (Array.getLength(object) == 0) {
+					return true;
+				}
+			} catch (Exception e) {
+				//do nothing
+			}
+		}
+
+		return false;
 	}
 
 }
