@@ -12,22 +12,22 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
        
 
-   <!-- 개인 테스트용을 위한 메모리 DB 사용   -->
-    <jdbc:embedded-database id="dataSourceSpied" type="HSQL" >
+   <!-- 개인 테스트용을 위한 임베디드 DB 사용 -->
+    <jdbc:embedded-database id="dataSourceSpied" type="H2" >
         <jdbc:script location="classpath:database/hsqldb-schema.sql" />
         <jdbc:script location="classpath:database/hsqldb-dataload.sql" />
     </jdbc:embedded-database>
 
  	<!-- 일반 디비 연결시에 활성화 
- 	org.apache.commons.dbcp.BasicDataSource
- 	
-	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="shutdown">
+ 	org.apache.commons.dbcp2.BasicDataSource
+
+	<bean id="dataSourceSpied" class="com.zaxxer.hikari.HikariDataSource" destroy-method="shutdown">
 		<constructor-arg>
 			<bean class="com.zaxxer.hikari.HikariConfig">
 			   <constructor-arg>
 			      <props>
-			         <prop key="driverClassName">org.hsqldb.jdbc.JDBCDataSource</prop>
-			         <prop key="jdbcUrl">jdbc:hsqldb:file:C:/mine/db/myDB</prop>
+			         <prop key="driverClassName">jdbc:h2:mem:dataSource</prop>
+			         <prop key="jdbcUrl">jdbc:h2:mem:testdb</prop>
 			         <prop key="username">sa</prop>
 			         <prop key="password"></prop>
 			         <prop key="minimumIdle">10</prop>
@@ -37,7 +37,7 @@
 			</bean>
 		</constructor-arg>
 	</bean>
-	 --> 
+-->
  
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="dataSourceSpied" />

@@ -20,7 +20,6 @@
 	<if test="itemid != '' and itemid != null">
 		AND itemid = #{itemid}
   	</if>
-	ORDER BY CONVERT(substr(itemid,4+1 ), SQL_INTEGER ) ASC
 	</select>
 
 	<select id="selectItem" parameterType="CommonVO" resultType="CommonVO" >
@@ -31,7 +30,6 @@
 	<if test="itemid != '' and itemid != null">
 		AND itemid = #{itemid}
 	</if>
-	ORDER BY CONVERT(substr(itemid,4+1 ), SQL_INTEGER ) ASC
 	</select>
 
 	<!-- 아이템 저장  -->
