@@ -45,7 +45,7 @@ function fn_init(){
             {name:'listprice',align:"right", width:120},
             {name:'status',align:"center", width:60},
             {name:'attr1',align:"center", width:180}
-        ],
+        ]
     });
     jQuery("#jqGridTable").jqGrid('navGrid','#jqGridNav',{edit:false,add:false,del:false,search:false,refresh:false});
     

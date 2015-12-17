@@ -6,10 +6,13 @@ import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.commons.lang.StringUtils;
-import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.util.Assert;
-import org.springframework.web.servlet.view.document.AbstractExcelView;
+import org.springframework.web.servlet.view.document.AbstractXlsView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +25,7 @@ import java.util.Map;
 /**
  * The type Excel view.
  */
-public class ExcelView extends AbstractExcelView {
+public class ExcelView extends AbstractXlsView {
 
 	/** 디폴트 날짜 패턴 */
 	private static final String DEFAULT_DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
@@ -138,14 +141,16 @@ public class ExcelView extends AbstractExcelView {
 	/**
 	 * 생성 Excel 부분
 	 *
-	 * @param model
-	 * @param workbook
-	 * @param request
-	 * @param response
+	 * @param model Map
+	 * @param workbook Workbook
+	 * @param request  HttpServletRequest
+	 * @param response HttpServletResponse
+	 *
 	 */
-	public void buildExcelDocument(Map<String, Object> model, HSSFWorkbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+	public void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,HttpServletResponse  response) throws Exception {
 		Assert.notEmpty(properties);
-		HSSFSheet sheet;
+		Sheet sheet;
 		if (StringUtils.isNotEmpty(sheetName)) {
 			sheet = workbook.createSheet(sheetName);
 		} else {
@@ -153,18 +158,18 @@ public class ExcelView extends AbstractExcelView {
 		}
 		int rowNumber = 0;
 		if (titles != null && titles.length > 0) {
-			HSSFRow header = sheet.createRow(rowNumber);
+			Row header = sheet.createRow(rowNumber);
 			header.setHeight((short) 400);
 			for (int i = 0; i < properties.length; i++) {
-				HSSFCell cell = header.createCell(i);
+				Cell cell = header.createCell(i);
 
-				HSSFCellStyle cellStyle = workbook.createCellStyle();
+				CellStyle cellStyle = workbook.createCellStyle();
 
 				cellStyle.setFillForegroundColor(HSSFColor.LIGHT_CORNFLOWER_BLUE.index);
 				cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
 				cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
 				cellStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
-				HSSFFont font = workbook.createFont();
+				Font font = workbook.createFont();
 				font.setFontHeightInPoints((short) 11);
 				font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
 				cellStyle.setFont(font);
@@ -178,9 +183,9 @@ public class ExcelView extends AbstractExcelView {
 				}
 				*/
 				if (titles.length > i && titles[i] != null) {
-					cell.setCellValue(titles[i]);
+					cell.setCellValue(new HSSFRichTextString(titles[i]));
 				} else {
-					cell.setCellValue(properties[i]);
+					cell.setCellValue(new HSSFRichTextString(properties[i]));
 				}
 				if (widths != null && widths.length > i && widths[i] != null) {
 					sheet.setColumnWidth(i, widths[i]);
@@ -193,13 +198,13 @@ public class ExcelView extends AbstractExcelView {
 		}
 		if (data != null) {
 			for (Object item : data) {
-				HSSFRow row = sheet.createRow(rowNumber);
+				Row row = sheet.createRow(rowNumber);
 				for (int i = 0; i < properties.length; i++) {
-					HSSFCell cell = row.createCell(i);
+					Cell cell = row.createCell(i);
 					if (converters != null && converters.length > i && converters[i] != null) {
 						Class<?> clazz = PropertyUtils.getPropertyType(item, properties[i]);
 						ConvertUtils.register(converters[i], clazz);
-						cell.setCellValue(BeanUtils.getProperty(item, properties[i]));
+						cell.setCellValue(new HSSFRichTextString(BeanUtils.getProperty(item, properties[i])));
 						ConvertUtils.deregister(clazz);
 						if (clazz.equals(Date.class)) {
 							DateConverter dateConverter = new DateConverter();
@@ -207,7 +212,7 @@ public class ExcelView extends AbstractExcelView {
 							ConvertUtils.register(dateConverter, Date.class);
 						}
 					} else {
-						cell.setCellValue(BeanUtils.getProperty(item, properties[i]));
+						cell.setCellValue(new HSSFRichTextString(BeanUtils.getProperty(item, properties[i])));
 					}
 					if (rowNumber == 0 || rowNumber == 1) {
 						if (widths != null && widths.length > i && widths[i] != null) {
@@ -224,9 +229,9 @@ public class ExcelView extends AbstractExcelView {
 		if (contents != null && contents.length > 0) {
 			rowNumber++;
 			for (String content : contents) {
-				HSSFRow row = sheet.createRow(rowNumber);
-				HSSFCell cell = row.createCell(0);
-				cell.setCellValue(content);
+				Row row = sheet.createRow(rowNumber);
+				Cell cell = row.createCell(0);
+				cell.setCellValue(new HSSFRichTextString(content));
 				rowNumber++;
 			}
 		}
