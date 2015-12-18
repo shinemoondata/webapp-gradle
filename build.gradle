@@ -12,15 +12,19 @@ repositories {
 
 
 def version = [
-        spring: "4.2.1.RELEASE"
+        spring: "4.2.4.RELEASE"
         , mybatis: "3.3.0"
         , mybatisSpring: "1.2.3"
-        , mybatisCache: "1.0.0"
-        , ehcache: "2.10.0"
+        , ehcache: "2.10.1"
         , servlet: "3.1.0"
         , jstl: "1.2"
         , hsqldb: "2.3.2"
         , h2db: "1.4.190"
+        , sitemesh:"3.0.1"
+        , javassist:"3.18.2-GA"
+        , HikariCP:"2.4.3"
+        , mybatisEhcache:"1.0.3"
+
 ]
 
 // 의존성 설정에 사용할 프로퍼티
@@ -55,39 +59,37 @@ dependencies {
 
     providedCompile "javax.servlet:javax.servlet-api:${version.servlet}"
     compile "javax.servlet:jstl:${version.jstl}"
-    compile "org.sitemesh:sitemesh:3.0.1"
+    compile "org.sitemesh:sitemesh:${version.sitemesh}"
 
     compile "org.hsqldb:hsqldb:${version.hsqldb}"
     compile "com.h2database:h2:${version.h2db}"
-    compile "commons-dbcp:commons-dbcp:1.4"
-    compile "com.zaxxer:HikariCP:2.3.2"
-    compile "org.javassist:javassist:3.18.2-GA"
-
-
+    compile "com.zaxxer:HikariCP:${version.HikariCP}"
+    compile "org.javassist:javassist:${version.javassist}"
     compile "org.mybatis:mybatis:${version.mybatis}"
     compile "org.mybatis:mybatis-spring:${version.mybatisSpring}"
-    compile "org.mybatis:mybatis-ehcache:${version.mybatisCache}"
+    compile "org.mybatis.caches:mybatis-ehcache:${version.mybatisEhcache}"
     compile "net.sf.ehcache:ehcache:${version.ehcache}"
 
-    compile "org.slf4j:slf4j-log4j12:1.7.7"
+    compile "org.slf4j:slf4j-log4j12:1.7.13"
     compile "org.lazyluke:log4jdbc-remix:0.2.7"
 
+    compile "com.fasterxml.jackson.core:jackson-core:2.6.4"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.6.4"
 
-    compile "com.fasterxml.jackson.core:jackson-core:2.3.0"
-    compile "com.fasterxml.jackson.core:jackson-databind:2.3.0"
+    compile "commons-dbcp:commons-dbcp:1.4"
+    compile "org.apache.commons:commons-dbcp2:2.1.1"
 
-    compile "commons-fileupload:commons-fileupload:1.2.1"
+    compile "commons-fileupload:commons-fileupload:1.3.1"
     compile "commons-io:commons-io:2.4"
     compile "commons-beanutils:commons-beanutils:1.9.2"
     compile "commons-lang:commons-lang:2.6"
+    compile "org.apache.commons:commons-lang3:3.4"
 
-    compile "org.apache.poi:poi:3.12"
-    compile "org.apache.poi:poi-ooxml:3.12"
+    compile "org.apache.poi:poi:3.13"
+    compile "org.apache.poi:poi-ooxml:3.13"
 
     compile "com.lowagie:itext:4.2.2"
-    //compile "com.itextpdf:itextpdf:5.5.6"
 
 
-
-    testCompile "junit:junit:4.11"
+    testCompile "junit:junit:4.12"
 }

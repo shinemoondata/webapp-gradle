@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mybatis.caches:mybatis-ehcache:1.0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis.caches/mybatis-ehcache/1.0.3/1b9e44f35461f62550cee9f44716dec5caccc886/mybatis-ehcache-1.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis.caches/mybatis-ehcache/1.0.3/ef166d638de55a78633c0ae30205c1612588ced8/mybatis-ehcache-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
