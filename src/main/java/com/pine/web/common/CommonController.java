@@ -39,20 +39,19 @@ public class CommonController implements HandlerExceptionResolver
 	 */
 	@RequestMapping("/index")
 	public ModelAndView index(@ModelAttribute CommonVO vo) {
-		ModelAndView view = new ModelAndView();
 //		if ("search".equals(vo.getM())) { // 파라미터 값에 따라 json으로 분기
-			List<CommonVO> list = svc.selectItemList(vo);
-			view.addObject("rows", list);
+			//List<CommonVO> list = svc.selectItemList(vo);
+			//view.addObject("rows", list);
 //		}
 		//list.forEach(to -> {System.out.println("ss::::::"+to.getItemid()); }    );
 
-		List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+		//List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
 
-		Collections.sort(names, (a, b) -> a.compareTo(b));
+		//Collections.sort(names, (a, b) -> a.compareTo(b));
 
 		//names.forEach(System.out::println);
 
-		return view;
+		return new ModelAndView();
 	}
 
 	/**
@@ -131,7 +130,7 @@ public class CommonController implements HandlerExceptionResolver
 		ModelAndView view = new ModelAndView();
 		if("search".equals(vo.getM()))
 		{ // 파라미터 값에 따라 json으로 분기
-			view.addObject("rows", (List) svc.selectItemList(vo));
+			view.addObject("rows", svc.selectItemList(vo));
 		}
 		return view;
 	}
@@ -171,7 +170,7 @@ public class CommonController implements HandlerExceptionResolver
 			/** Total number of records */
 			m.put("records", 399);
 			/** The actual data */
-			m.put("rows", (List) svc.selectItemList(vo));
+			m.put("rows",  svc.selectItemList(vo));
 
 			view.addAllObjects(m);
 
@@ -199,7 +198,7 @@ public class CommonController implements HandlerExceptionResolver
 			/** Total number of records */
 			m.put("records", 399);
 			/** The actual data */
-			m.put("rows", (List) svc.selectItemList(vo));
+			m.put("rows",  svc.selectItemList(vo));
 
 			view.addAllObjects(m);
 
@@ -230,7 +229,7 @@ public class CommonController implements HandlerExceptionResolver
 	 */
 	@RequestMapping("/common/jsonObj")
 	public @ResponseBody List jsonObj(@ModelAttribute CommonVO vo)  {
-	    return (List)svc.selectItemList(vo);
+	    return svc.selectItemList(vo);
 	}
 
 

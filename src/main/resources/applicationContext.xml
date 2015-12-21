@@ -18,27 +18,53 @@
         <jdbc:script location="classpath:database/hsqldb-dataload.sql" />
     </jdbc:embedded-database>
 
- 	<!-- 일반 디비 연결시에 활성화 
- 	org.apache.commons.dbcp2.BasicDataSource
 
-	<bean id="dataSourceSpied" class="com.zaxxer.hikari.HikariDataSource" destroy-method="shutdown">
-		<constructor-arg>
-			<bean class="com.zaxxer.hikari.HikariConfig">
-			   <constructor-arg>
-			      <props>
-			         <prop key="driverClassName">jdbc:h2:mem:dataSource</prop>
-			         <prop key="jdbcUrl">jdbc:h2:mem:testdb</prop>
-			         <prop key="username">sa</prop>
-			         <prop key="password"></prop>
-			         <prop key="minimumIdle">10</prop>
-			         <prop key="maximumPoolSize">250</prop>
-			     </props>
-			  </constructor-arg>
-			</bean>
-		</constructor-arg>
+ 	<!-- 일반 디비 연결시에 활성화 -->
+
+	<!-- HikariCP configuration 2.3.X 버전용
+	<bean id="dataSourceSpied" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.sybase.jdbc4.jdbc.SybDataSource" />
+		<property name="jdbcUrl" value="jdbc:sybase:Tds:172.16.1.144:12200/pmsdb?CHARSET=utf8" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
+	-->
+
+	<!-- HikariCP configuration 2.4.X 버전용
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="com.sybase.jdbc4.jdbc.SybDataSource" />
+		<property name="jdbcUrl" value="jdbc:sybase:Tds:172.16.1.144:12200/pmsdb?CHARSET=utf8" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
+
+	<bean id="dataSourceSpied" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+	-->
+
+
+	<!-- 일반 dbcp 버전용
+	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close">
+		<property name="driverClassName" value="com.sybase.jdbc3.jdbc.SybDriver"/>
+		<property name="url" value="jdbc:sybase:Tds:172.16.1.144:12200/pmsdb?CHARSET=utf8"/>
+		<property name="username" value="sa"/>
+		<property name="password" value=""/>
+	</bean>
+	-->
+
+
+<!-- 일반 dbcp2 버전용
+	<bean id="dataSourceSpied" class="org.apache.commons.dbcp2.BasicDataSource"  destroy-method="close">
+		<property name="driverClassName" value="com.sybase.jdbc4.jdbc.SybDriver"/>
+		<property name="url" value="jdbc:sybase:Tds:172.16.1.144:12200/pmsdb?CHARSET=utf8"/>
+		<property name="username" value="sa"/>
+		<property name="password" value=""/>
 	</bean>
 -->
- 
+
+
+
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="dataSourceSpied" />
 		<property name="logFormatter">
@@ -48,7 +74,7 @@
 			</bean>
 		</property>
 	</bean>
-  
+
 
 	<!-- MyBatis Setting 
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
