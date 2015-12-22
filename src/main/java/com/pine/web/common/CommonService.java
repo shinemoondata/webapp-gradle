@@ -104,7 +104,7 @@ public class CommonService {
 	 * @return the string
 	 * @throws MultipartException the multipart exception
 	 */
-	public String upload(MultipartHttpServletRequest multi) throws MultipartException
+	public String upload(MultipartHttpServletRequest multi)
 	{
 		String isSuccess = "";
 		try {
@@ -112,13 +112,13 @@ public class CommonService {
 			Iterator<String> itr = multi.getFileNames();
 			while (itr.hasNext()) { //받은 파일들을 모두 돌린다.
 				MultipartFile mpf = multi.getFile(itr.next());
-				if( mpf.getSize() > 62914560){
+				if (mpf.getSize() > 62914560) {
 					isSuccess = "File Limit 60MB!";
-				}else{
+				} else {
 					String originFileName = mpf.getOriginalFilename();
 
-					Long l= System.nanoTime();
-					String postfix = "_" +  String.valueOf(l);
+					Long l = System.nanoTime();
+					String postfix = "_" + String.valueOf(l);
 
 					System.out.println("FILE_INFO: " + originFileName); //받은 파일 리스트 출력
 					System.out.println("FILE_INFO_SAVED: " + postfix); //받은 파일 리스트 출력
@@ -143,9 +143,10 @@ public class CommonService {
 
 			}
 
-
+		} catch(MultipartException m){
+			isSuccess = m.getMessage();
 		} catch(IOException ex){
-			isSuccess = "Failed";
+			isSuccess = ex.getMessage();
 		}
 		return isSuccess;
 	}
@@ -226,9 +227,7 @@ public class CommonService {
 
 		List list = mapper.selectItemList(to);
 
-		ExcelView view = new ExcelView(filename, to.getDataArray(),to.getHeaderArray(), list );
-
-		return view;
+		return new ExcelView(filename, to.getDataArray(),to.getHeaderArray(), list );
 	}
 
 
@@ -251,7 +250,7 @@ public class CommonService {
 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream() ,"utf-8") );
 			String resData = "";
-			String chunked = "";
+			String chunked;
 
 			while((chunked = reader.readLine()) != null) {
 				resData += chunked;
@@ -264,7 +263,7 @@ public class CommonService {
 			factory.setValidating(false);
 			factory.setNamespaceAware(true);
 			DocumentBuilder docBuilder = factory.newDocumentBuilder();//xml parsing
-			Document doc = docBuilder.parse(new InputSource(new StringReader(resData.toString()  )  ));
+			Document doc = docBuilder.parse(new InputSource(new StringReader(resData)  ));
 
 			rtn = getTextValue(doc.getDocumentElement().getElementsByTagName("RESULT"));
 

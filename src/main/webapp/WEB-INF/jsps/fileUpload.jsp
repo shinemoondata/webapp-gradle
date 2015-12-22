@@ -203,6 +203,7 @@
           success: function(data){
             status.setProgress(100);
             //$("#status1").append("File upload Done<br>");
+
             alert(data.result);
           },
           error: function( jqXHR, textStatus, errorThrown ) {
