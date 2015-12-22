@@ -124,16 +124,16 @@ function _cbGo(data)
 	<option value="1.5em">1.5em</option>
 </select></label>
 <div id="divFontSize">
-	<div class="ng" >Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890 font크기: 1.2em</div>
-	<div class="nbs" >Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="ngc" >Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="nm" >Nanum Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="nps" >Nanum Pen Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="hn" >Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jg" >Jeju Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jh" >Jeju Hallasan Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jm" >Jeju Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="kb" >KoPub Batang Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="ng" >Nanum Gothic(나눔고딕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890 font크기: 1.2em</div>
+	<div class="nbs" >Nanum Brush(나눔브러쉬) : Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="ngc" >Nanum Gothic Coding(나눔고딕코딩) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="nm" >Nanum Myeongjo(나눔명조) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="nps" >Nanum Pen Script(나눔펜스크립트) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="hn" >Hanna(하나) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jg" >Jeju Gothic(제주고딕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jh" >Jeju Hallasan(제주한라산) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jm" >Jeju Myeongjo(제주명조) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="kb" >KoPub Batang(코펍바탕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
 </div>
 <script type="text/javascript">
 	$(window).load(function() {
