@@ -84,7 +84,7 @@ li {padding-bottom:10px}
 	<div style="font-family:'NotoSansBold';">NotoSansBold, 10liLIoO, 가나다라마바사아자차카타파하</div>
 	<div style="font-family:'NotoSansBlack';">NotoSansBlack, 10liLIoO, 가나다라마바사아자차카타파하</div>
 
-	<div style="font-family:'NotoSans';">Noto Sans10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSans';">Noto Sans, 10liLIoO, 가나다라마바사아자차카타파하</div>
 	<div style="font-family:'NanumBarunGothic';">나눔바른고딕, 10liLIoO, 가나다라마바사아자차카타파하</div>
 	<div style="font-family:'NanumGothic';">나눔고딕 10liLIoO, 가나다라마바사아자차카타파하</div>
 
