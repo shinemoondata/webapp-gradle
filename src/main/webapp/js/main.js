@@ -1191,33 +1191,26 @@ function cf_getMoney(mon){
 
 
 /* CONTEXT MENU 방지 */
-//document.oncontextmenu = function (){return false;};
+document.oncontextmenu = function (){return false;};
 /* 마우스 오른쪽 버튼 방지 */
-//document.onmousedown = function (e){var isNS = (navigator.appName == "Netscape") ? 1 : 0;if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);var myevent = (isNS) ? e : event;var eventbutton = (isNS) ? myevent.which : myevent.button;if((eventbutton==2)||(eventbutton==3)) return false;};
+document.onmousedown = function (e){var isNS = (navigator.appName == "Netscape") ? 1 : 0;if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);var myevent = (isNS) ? e : event;var eventbutton = (isNS) ? myevent.which : myevent.button;if((eventbutton==2)||(eventbutton==3)) return false;};
 /* 마우스 오른쪽 버튼 방지 */
-//document.onmouseup = function (e){var isNS = (navigator.appName == "Netscape") ? 1 : 0;if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);var myevent = (isNS) ? e : event;var eventbutton = (isNS) ? myevent.which : myevent.button;if((eventbutton==2)||(eventbutton==3)) return false;};
+document.onmouseup = function (e){var isNS = (navigator.appName == "Netscape") ? 1 : 0;if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);var myevent = (isNS) ? e : event;var eventbutton = (isNS) ? myevent.which : myevent.button;if((eventbutton==2)||(eventbutton==3)) return false;};
 
-document.onkeydown = function(){
-	switch(event.keyCode){
-		//case 116: /* F5 방지 */
-		//	event.returnValue = false;
-		//	event.keyCode = 0;
-		//	break;
-		case 8: /* 백스페이스 방지 */
+$(function(){
+	/*
+	 * this swallows backspace keys on any non-input element.
+	 * stops backspace -> back
+	 */
+	var rx = /INPUT|SELECT|TEXTAREA/i;
 
-			var tg = $(event.srcElement).get(0);
-			var name = tg.tagName;
-			var type = tg.type;
-			var readonly = $(tg).attr("readonly");
-
-			if(!(name == "INPUT" && (type == "text" || type == "password") && readonly != "readonly" || name == "TEXTAREA" && readonly != "readonly"))
-			{
-				// INPUT(text, password), TEXTAREA 이 수정가능상태 일 때에만 백스페이스 허용
-				event.returnValue = false;
-				event.keyCode = 0;
+	$(document).bind("keydown keypress", function(e){
+		if( e.which == 8 ){ // 8 == backspace
+			if(!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly ){
+				e.preventDefault();
 			}
-			break;
-	}
-};
+		}
+	});
+});
 
 
