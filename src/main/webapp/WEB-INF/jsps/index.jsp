@@ -92,21 +92,6 @@ function _cbGo(data)
 	<button type="button" id="exceldownload">엑셀다운로드</button>
 </div>
 
-<div style="font-family:'Gulim';">굴림 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'Dotum';">돋움 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'Malgun Gothic';">맑은고딕 웹폰트 테스트10liLIoO</div>
-
-<div style="font-family:'NotoSansThin';">NotoSansThin 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansLight';">NotoSansLight 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansRegular';">NotoSansRegular 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansDemiLight';">NotoSansDemiLight 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansMedium';">NotoSansMedium 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansBold';">NotoSansBold 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NotoSansBlack';">NotoSansBlack 웹폰트 테스트10liLIoO</div>
-
-<div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NanumBarunGothic';">나눔바른고딕 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NanumGothic';">나눔고딕 웹폰트 테스트10liLIoO</div>
 
 <label>폰트 사이즈 선택: <select id="sltFontSize">
 	<option value="">폰트사이즈 선택해주세요.</option>
@@ -124,16 +109,34 @@ function _cbGo(data)
 	<option value="1.5em">1.5em</option>
 </select></label>
 <div id="divFontSize">
-	<div class="ng" >Nanum Gothic(나눔고딕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890 font크기: 1.2em</div>
-	<div class="nbs" >Nanum Brush(나눔브러쉬) : Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="ngc" >Nanum Gothic Coding(나눔고딕코딩) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="nm" >Nanum Myeongjo(나눔명조) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="nps" >Nanum Pen Script(나눔펜스크립트) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="hn" >Hanna(하나) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jg" >Jeju Gothic(제주고딕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jh" >Jeju Hallasan(제주한라산) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="jm" >Jeju Myeongjo(제주명조) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
-	<div class="kb" >KoPub Batang(코펍바탕) : Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+
+	<div style="font-family:'Gulim';">굴림, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'Dotum';">돋움, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'Malgun Gothic';">맑은고딕, 10liLIoO, 가나다라마바사아자차카타파하</div>
+
+	<div style="font-family:'NotoSansThin';">NotoSansThin, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansLight';">NotoSansLight, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansRegular';">NotoSansRegular, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansDemiLight';">NotoSansDemiLight, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansMedium';">NotoSansMedium, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansBold';">NotoSansBold, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NotoSansBlack';">NotoSansBlack, 10liLIoO, 가나다라마바사아자차카타파하</div>
+
+	<div style="font-family:'NotoSans';">Noto Sans10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NanumBarunGothic';">나눔바른고딕, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div style="font-family:'NanumGothic';">나눔고딕 10liLIoO, 가나다라마바사아자차카타파하</div>
+
+
+	<div class="ng" >Nanum Gothic(나눔고딕) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="nbs" >Nanum Brush(나눔브러쉬) : Script Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="ngc" >Nanum Gothic Coding(나눔고딕코딩) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="nm" >Nanum Myeongjo(나눔명조) : Lorem ipsum dolor sit amet, 10liLIoO, </div>
+	<div class="nps" >Nanum Pen Script(나눔펜스크립트) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="hn" >Hanna(하나) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="jg" >Jeju Gothic(제주고딕) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="jh" >Jeju Hallasan(제주한라산) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="jm" >Jeju Myeongjo(제주명조) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
+	<div class="kb" >KoPub Batang(코펍바탕) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
 </div>
 <script type="text/javascript">
 	$(window).load(function() {
