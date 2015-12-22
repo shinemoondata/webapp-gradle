@@ -10,12 +10,12 @@
 li {padding-bottom:10px}
 
 
-.hn {font-family: 'Hanna';}
-.nbs {font-family: 'Nanum Brush Script';}
-.ng {font-family: 'NanumGothic';}
-.ngc {font-family: 'Nanum Gothic Coding';}
-.nm {font-family: 'Nanum Myeongjo';}
-.nps {font-family: 'Nanum Pen Script';}
+.hn {font-family: 'Hanna', sans-serif;}
+.nbs {font-family: 'Nanum Brush Script', sans-serif;}
+.ng {font-family: 'NanumGothic', sans-serif;}
+.ngc {font-family: 'Nanum Gothic Coding', sans-serif;}
+.nm {font-family: 'Nanum Myeongjo', sans-serif;}
+.nps {font-family: 'Nanum Pen Script', sans-serif;}
 .jg {font-family: 'Jeju Gothic', sans-serif;}
 .jh {font-family: 'Jeju Hallasan', cursive;}
 .jm {font-family: 'Jeju Myeongjo', serif;}
@@ -45,28 +45,18 @@ li {padding-bottom:10px}
 </script>
 
 <script>
-$(window).load(function() {
-	$('#handlebars').click(function() 		{	fn_go(1);		 return false;});
-	$('#jqgrid').click(function() 		{	fn_go(2);	 return false;});
-	$('#popup_member').click(function() 		{	fn_go(3);	 return false;});
-	$('#fileupload').click(function() 		{	fn_go(4);	 return false;});
-	$('#multidownload').click(function() 		{	fn_go(5);	 return false;});
-	$('#exceldownload').click(function() 		{	fn_go(6);	 return false;});
 
-});
 function fn_go(type)
 {
+	var _cbfunc="?rtn=_cbGo";
+	var url ="";
 	if(type == 1){
-		var _cbfunc= "?rtn=_cbGo";
 		url = '/common/handlebars.pms'+_cbfunc;
 		jWindowPopup(url, '760', '480', 'yes','handlebars');
-			
 	}else if(type == 2){
-		var _cbfunc= "?rtn=_cbGo";
 		url = '/common/popup_jqgrid.pms'+_cbfunc;
 		jWindowPopup(url, '630', '550', 'yes','jqgrid');
 	}else if(type == 3){
-		var _cbfunc= "?rtn=_cbGo";
 		url = '/common/popup_member.pms'+_cbfunc;
 		jWindowPopup(url, '630', '550', 'yes','jqgrid');
 	}else if(type == 4){
@@ -115,17 +105,49 @@ function _cbGo(data)
 <div style="font-family:'NotoSansBlack';">NotoSansBlack 웹폰트 테스트10liLIoO</div>
 
 <div style="font-family:'NotoSans';">Noto Sans웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NanumBarunGothic'";>나눔바른고딕 웹폰트 테스트10liLIoO</div>
-<div style="font-family:'NanumGothic'";>나눔고딕 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NanumBarunGothic';">나눔바른고딕 웹폰트 테스트10liLIoO</div>
+<div style="font-family:'NanumGothic';">나눔고딕 웹폰트 테스트10liLIoO</div>
 
-<div class="ng">Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890</div>
+<label>폰트 사이즈 선택: <select id="sltFontSize">
+	<option value="">폰트사이즈 선택해주세요.</option>
+	<option value="0.75em">0.75em</option>
+	<option value="1em">1em</option>
+	<option value="1.05em">1.05em</option>
+	<option value="1.1em">1.1em</option>
+	<option value="1.15em">1.15em</option>
+	<option value="1.2em">1.2em</option>
+	<option value="1.25em">1.25em</option>
+	<option value="1.3em">1.3em</option>
+	<option value="1.35em">1.35em</option>
+	<option value="1.4em">1.4em</option>
+	<option value="1.45em">1.45em</option>
+	<option value="1.5em">1.5em</option>
+</select></label>
+<div id="divFontSize">
+	<div class="ng" >Nanum Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO1234567890 font크기: 1.2em</div>
+	<div class="nbs" >Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="ngc" >Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="nm" >Nanum Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="nps" >Nanum Pen Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="hn" >Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jg" >Jeju Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jh" >Jeju Hallasan Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="jm" >Jeju Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+	<div class="kb" >KoPub Batang Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO font크기: 1.2em</div>
+</div>
+<script type="text/javascript">
+	$(window).load(function() {
+		$('#handlebars').click(function() 		{	fn_go(1);		 return false;});
+		$('#jqgrid').click(function() 		{	fn_go(2);	 return false;});
+		$('#popup_member').click(function() 		{	fn_go(3);	 return false;});
+		$('#fileupload').click(function() 		{	fn_go(4);	 return false;});
+		$('#multidownload').click(function() 		{	fn_go(5);	 return false;});
+		$('#exceldownload').click(function() 		{	fn_go(6);	 return false;});
+		$('#sltFontSize').change(function() 		{
+			if($(this).val() != ""){
+				$('#divFontSize').css("font-size",$(this).val());
+			}
+		});
 
-<div class="nbs">Nanum Brush Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="ngc">Nanum Gothic Coding Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="nm">Nanum Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="nps">Nanum Pen Script Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="hn">Hanna Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="jg">Jeju Gothic Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="jh">Jeju Hallasan Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="jm">Jeju Myeongjo Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
-<div class="kb">KoPub Batang Lorem ipsum dolor sit amet, 웹폰트 테스트10liLIoO</div>
+	});
+</script>
