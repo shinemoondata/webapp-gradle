@@ -8,8 +8,6 @@
 <title>아이템 목록</title>
 <style>
 li {padding-bottom:10px}
-
-
 .hn {font-family: 'Hanna', sans-serif;}
 .nbs {font-family: 'Nanum Brush Script', sans-serif;}
 .ng {font-family: 'NanumGothic', sans-serif;}
@@ -42,42 +40,6 @@ li {padding-bottom:10px}
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(wf, s);
 	})();
-</script>
-
-<script>
-
-function fn_go(type)
-{
-	var _cbfunc="?rtn=_cbGo";
-	var url ="";
-	if(type == 1){
-		url = '/common/handlebars.pms'+_cbfunc;
-		jWindowPopup(url, '760', '480', 'yes','handlebars');
-	}else if(type == 2){
-		url = '/common/popup_jqgrid.pms'+_cbfunc;
-		jWindowPopup(url, '630', '550', 'yes','jqgrid');
-	}else if(type == 3){
-		url = '/common/popup_member.pms'+_cbfunc;
-		jWindowPopup(url, '630', '550', 'yes','jqgrid');
-	}else if(type == 4){
-		url = 'fileUpload.pms';
-		location.href = url;
-	}else if(type == 5){
-		url = 'fileDownload.pms';
-		window.open(url);
-	}else if(type == 6){
-		var param ="HeaderColumns=아이템아이디`제품아이디`가격`단위`제고`상태`속성";
-			param += "&Properties=itemid`productid`listprice`unitcost`supplier`status`attr1";
-		url = 'excelDownload.pms?'+param;
-		window.open(url);
-	}
-}
- 
-function _cbGo(data)
-{// 레이어 팝업 콜백 함수
-	//리터값이 json 일때. 적당히 가공하여 파싱
-	
-}
 </script>
 </head>
 
@@ -139,6 +101,40 @@ function _cbGo(data)
 	<div class="kb" >KoPub Batang(코펍바탕) : Lorem ipsum dolor sit amet, 10liLIoO, 가나다라마바사아자차카타파하</div>
 </div>
 <script type="text/javascript">
+
+	function fn_go(type)
+	{
+		var _cbfunc="?rtn=_cbGo";
+		var url ="";
+		if(type == 1){
+			url = '/common/handlebars.pms'+_cbfunc;
+			jWindowPopup(url, '760', '480', 'yes','handlebars');
+		}else if(type == 2){
+			url = '/common/popup_jqgrid.pms'+_cbfunc;
+			jWindowPopup(url, '630', '550', 'yes','jqgrid');
+		}else if(type == 3){
+			url = '/common/popup_member.pms'+_cbfunc;
+			jWindowPopup(url, '630', '550', 'yes','jqgrid');
+		}else if(type == 4){
+			url = 'fileUpload.pms';
+			location.href = url;
+		}else if(type == 5){
+			url = 'fileDownload.pms';
+			window.open(url);
+		}else if(type == 6){
+			var param ="HeaderColumns=아이템아이디`제품아이디`가격`단위`제고`상태`속성";
+			param += "&Properties=itemid`productid`listprice`unitcost`supplier`status`attr1";
+			url = 'excelDownload.pms?'+param;
+			window.open(url);
+		}
+	}
+
+	function _cbGo(data)
+	{// 레이어 팝업 콜백 함수
+		//리터값이 json 일때. 적당히 가공하여 파싱
+
+	}
+
 	$(window).load(function() {
 		$('#handlebars').click(function() 		{	fn_go(1);		 return false;});
 		$('#jqgrid').click(function() 		{	fn_go(2);	 return false;});
