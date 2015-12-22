@@ -101,6 +101,8 @@ jQuery.extend({
             }
         };
 
+        var rv = -1; // Return value assumes failure.
+
         var resize = function($obj, width, height) {
             width = parseInt(width);
             height = parseInt(height);
@@ -109,7 +111,15 @@ jQuery.extend({
             if (options.type === "iframe") {
                 var dw = 3, dh = 2;
                 try{
-                    if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+                    if(navigator.appName == 'Microsoft Internet Explorer' ) {
+                        var rv = -1;
+                        var ua = navigator.userAgent;
+                        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+                        if (re.exec(ua) != null) rv = parseFloat(RegExp.$1);
+                        if (rv < 9.0) {
+                            dw = dh = 0;
+                        }
+                    }
                 }catch(e){
                     dw = dh = 0;
                 }
@@ -286,7 +296,15 @@ jQuery.extend({
             ////for iframe browser compatibility
             var dw = 3, dh = 2;
             try{
-                if($.browser.msie && $.browser.version < 9.0)dw = dh = 0;
+                if(navigator.appName == 'Microsoft Internet Explorer' ) {
+                    var rv = -1;
+                    var ua = navigator.userAgent;
+                    var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+                    if (re.exec(ua) != null) rv = parseFloat(RegExp.$1);
+                    if (rv < 9.0) {
+                        dw = dh = 0;
+                    }
+                }
             }catch(e){
                 dw = dh = 0;
             }
